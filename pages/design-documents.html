@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../src/CSS/design-documents.css" />
+  <title>Final Project Planning | The Candy Shop Wars Catalog</title>
+</head>
+<body>
+  <header>
+    <h1>Final Project Planning Document</h1>
+    <p><strong>Project:</strong> The Candy Shop Wars Catalog</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Project Title</h2>
+      <p><strong>The Candy Shop Wars Catalog</strong></p>
+    </section>
+
+    <section>
+      <h2>Project Type</h2>
+      <p>Storefront</p>
+    </section>
+
+    <section>
+      <h2>Project Description</h2>
+      <p>
+        The Candy Shop Wars Catalog is a storefront-style web application inspired by
+        the Candy Shop Wars book series. Users will be able to browse a collection of
+        magical candies and items, filter items by category, view detailed item
+        information, save favorite items, and submit an order form.
+      </p>
+      <p>
+        The project will keep the same structure as the storefront assignment while
+        using a custom theme. The goal is to create a simple, accessible, and
+        responsive online catalog that feels magical and adventurous without becoming
+        too complicated.
+      </p>
+    </section>
+
+    <section>
+      <h2>Wireframes</h2>
+      <p>Wireframes were created using Stitch.</p>
+      <p>
+        <a href="https://stitch.withgoogle.com/projects/12220108829462453057" target="_blank" rel="noopener">
+          View Wireframes in Stitch
+        </a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Color Palette</h2>
+      <p>
+        The color palette is inspired by the Candy Shop Wars trilogy covers, especially
+        the purple box set, teal/green magical lighting, and gold title lettering.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Color Role</th>
+            <th>Color Name</th>
+            <th>Hex Code</th>
+            <th>Use</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Primary</td>
+            <td>Deep Purple</td>
+            <td>#5B2A86</td>
+            <td>Header, navigation, major branding</td>
+          </tr>
+          <tr>
+            <td>Secondary</td>
+            <td>Deep Teal</td>
+            <td>#1F5F67</td>
+            <td>Buttons, links, secondary UI elements</td>
+          </tr>
+          <tr>
+            <td>Accent</td>
+            <td>Antique Gold</td>
+            <td>#D4A54A</td>
+            <td>Borders, badges, highlights, decorative details</td>
+          </tr>
+          <tr>
+            <td>Background</td>
+            <td>Warm Cream</td>
+            <td>#F8F4EC</td>
+            <td>Main page background</td>
+          </tr>
+          <tr>
+            <td>Text</td>
+            <td>Dark Cocoa</td>
+            <td>#2D221B</td>
+            <td>Main body text</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        To support accessibility, gold will mainly be used as a decorative accent
+        rather than for important text. Main text will use dark cocoa on a warm cream
+        background, and buttons will use white text on dark purple or teal backgrounds
+        for stronger contrast.
+      </p>
+    </section>
+
+    <section>
+      <h2>Typography</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Use</th>
+            <th>Font</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Headings</td>
+            <td>Cinzel</td>
+          </tr>
+          <tr>
+            <td>Body Text</td>
+            <td>Inter</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Cinzel will be used for headings because it gives the site a magical,
+        book-inspired feeling. Inter will be used for body text because it is clean,
+        readable, and works well for forms, product cards, and longer descriptions.
+      </p>
+    </section>
+
+    <section>
+      <h2>Planned Pages / Views</h2>
+
+      <h3>Home / Catalog Page</h3>
+      <p>
+        The home page will display the main product catalog. It will include a header,
+        navigation, a short intro section, a category filter dropdown, and a responsive
+        grid of magical item cards.
+      </p>
+
+      <p>Each item card will include:</p>
+      <ul>
+        <li>Item image</li>
+        <li>Item name</li>
+        <li>Category</li>
+        <li>Price</li>
+        <li>Short description</li>
+        <li>View Details button</li>
+      </ul>
+
+      <h3>Item Detail Page</h3>
+      <p>
+        The item detail page will show more information about one selected catalog
+        item. The correct item will load using a URL parameter, such as
+        <code>?id=moon-rocks</code>.
+      </p>
+
+      <p>The detail page will include:</p>
+      <ul>
+        <li>Larger item image</li>
+        <li>Item name</li>
+        <li>Price</li>
+        <li>Category</li>
+        <li>Rarity</li>
+        <li>Full description</li>
+        <li>Magical effect</li>
+        <li>Add to Favorites button</li>
+        <li>Order button</li>
+        <li>Back to Catalog link</li>
+      </ul>
+
+      <h3>Order Form Page</h3>
+      <p>
+        The order form page will allow users to submit a mock order request for an
+        item. The selected item will be shown in an order summary area.
+      </p>
+
+      <p>The form will include:</p>
+      <ul>
+        <li>Name</li>
+        <li>Email</li>
+        <li>Phone</li>
+        <li>Address</li>
+        <li>Optional message</li>
+      </ul>
+
+      <p>Required fields will be validated before submission.</p>
+
+      <h3>Favorites Page</h3>
+      <p>
+        The favorites page will show items the user saved. Favorites will be stored in
+        localStorage so they remain after the page refreshes.
+      </p>
+
+      <p>The page will include:</p>
+      <ul>
+        <li>Saved item cards</li>
+        <li>Remove favorite button</li>
+        <li>Empty state message if no favorites have been saved</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Planned Site Structure</h2>
+      <p>
+        The project will use a Vite-based structure organized by purpose. JavaScript
+        modules will be separated to improve maintainability and readability.
+      </p>
+
+      <pre><code>
+THE-CANDY-SHOP
+│   src/
+│   ├── assets/
+│   ├── CSS/
+│   │   ├── design-documents.css
+│   │   └── style.css
+│   ├── JS/
+│   │   ├── main.js
+│   │   ├── data.js
+│   │   ├── render.js
+│   │   ├── storage.js
+│   │   └── utils.js
+│   ├── public/
+│   │   ├── data/
+│   │   │   └── items.json
+│   │   └── images/
+│   │       └── product images
+│   ├── favicon.svg
+│   └── icons.svg
+├── pages/
+│   ├── design-documents.html
+│   ├── order.html
+│   ├── favorites.html
+│   └── product.html
+└── index.html
+</code></pre>
+
+      <p>
+        This structure separates styling, JavaScript modules, data files, and images
+        into dedicated folders to keep the project organized as it grows.
+      </p>
+    </section>
+
+    <section>
+      <h2>Planned JavaScript Modules</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>main.js</code></td>
+            <td>Main entry file. Handles page setup, event listeners, and calls functions from other modules.</td>
+          </tr>
+          <tr>
+            <td><code>data.js</code></td>
+            <td>Fetches item data from the local JSON file and handles loading/error states.</td>
+          </tr>
+          <tr>
+            <td><code>render.js</code></td>
+            <td>Contains functions for rendering item cards, item details, favorites, and order summaries.</td>
+          </tr>
+          <tr>
+            <td><code>storage.js</code></td>
+            <td>Handles localStorage features, including saving favorites and tracking order count.</td>
+          </tr>
+          <tr>
+            <td><code>utils.js</code></td>
+            <td>Contains helper functions, such as getting URL parameters or formatting prices.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Planned JSON Structure</h2>
+      <p>
+        Product data will be stored in a local JSON file named <code>items.json</code>.
+        The file will include at least 12 magical candies or items.
+      </p>
+
+      <p>Example item structure:</p>
+
+      <pre><code>{
+  "id": "moon-rocks",
+  "name": "Moon Rocks",
+  "category": "Magical Candy",
+  "price": 6.99,
+  "rarity": "Rare",
+  "shortDescription": "A mysterious candy with unusual movement-based effects.",
+  "description": "Moon Rocks are magical candies known for giving the user a strange and powerful ability for a short time.",
+  "magicalEffect": "Allows temporary gravity-defying movement.",
+  "image": "images/moon-rocks.jpg"
+}</code></pre>
+
+      <p>Planned item categories may include:</p>
+      <ul>
+        <li>Magical Candy</li>
+        <li>Utility Item</li>
+        <li>Artifact</li>
+        <li>Carnival Item</li>
+        <li>Adventure Gear</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Planned localStorage Feature</h2>
+      <p>
+        The main localStorage feature will be saved favorites. When users click
+        “Add to Favorites,” the item ID will be saved in localStorage. When they
+        return to the site or refresh the page, their favorite items will still
+        appear.
+      </p>
+    </section>
+
+    <section>
+      <h2>Form Validation Plan</h2>
+      <p>The order form will collect the following information:</p>
+
+      <ul>
+        <li>Name, required</li>
+        <li>Email, required</li>
+        <li>Phone number, required</li>
+        <li>Address, required</li>
+        <li>Optional message</li>
+      </ul>
+
+      <p>Validation rules:</p>
+
+      <ul>
+        <li>Name must not be empty.</li>
+        <li>Email must use a valid email format.</li>
+        <li>Phone number must contain a valid phone number format.</li>
+        <li>Address must not be empty.</li>
+        <li>Required fields will display clear error messages if validation fails.</li>
+        <li>Invalid fields will be visually identified without relying on color alone.</li>
+        <li>Error messages will be associated with their corresponding inputs for accessibility.</li>
+      </ul>
+
+      <p>After successful submission:</p>
+
+      <ul>
+        <li>A confirmation message will be displayed.</li>
+        <li>The selected item information will be shown in the confirmation.</li>
+        <li>The order count stored in localStorage will be updated.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Accessibility Plan</h2>
+      <p>
+        The site will be designed with accessibility in mind. I will use semantic HTML
+        elements such as <code>header</code>, <code>nav</code>, <code>main</code>,
+        <code>section</code>, and <code>footer</code>. Images will include descriptive
+        alt text. Forms will use visible labels, appropriate input types, and clear
+        validation messages.
+      </p>
+
+      <p>
+        The color palette will be used carefully to maintain readable contrast.
+        Important information will not be communicated by color alone. Buttons and
+        links will have clear text, large clickable areas, and visible focus states
+        for keyboard users. The layout will also be responsive so the site works well
+        on both mobile and desktop screens.
+      </p>
+    </section>
+
+    <section>
+      <h2>Repository and Deployment</h2>
+      <p><strong>GitHub Repository:</strong> Add repository link here.</p>
+      <p><strong>Netlify Deployment:</strong> Add Netlify link here.</p>
+      <p><strong>Starter Page Status:</strong> Initial starter page is online.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 The Candy Shop Wars Catalog Planning Document</p>
+  </footer>
+</body>
+</html>
+
