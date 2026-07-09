@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Favorites - The Candy Shop Wars</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#5f2e8a",
+                        "on-secondary-fixed": "#001f23",
+                        "on-secondary-container": "#306d75",
+                        "on-primary-container": "#cf9afd",
+                        "tertiary-container": "#593e00",
+                        "on-surface-variant": "#4c4450",
+                        "surface-tint": "#7847a4",
+                        "tertiary-fixed": "#ffdea7",
+                        "surface-dim": "#ead6cb",
+                        "secondary-container": "#b0edf6",
+                        "on-tertiary-fixed": "#271900",
+                        "on-secondary-fixed-variant": "#034f56",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#f3dfd3",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "surface-container-highest": "#f3dfd3",
+                        "inverse-on-surface": "#ffede4",
+                        "inverse-surface": "#3a2e27",
+                        "primary-container": "#5b2a86",
+                        "error": "#ba1a1a",
+                        "on-surface": "#241913",
+                        "outline": "#7d7481",
+                        "on-tertiary-fixed-variant": "#5e4200",
+                        "on-secondary": "#ffffff",
+                        "primary": "#430d6e",
+                        "primary-fixed-dim": "#dfb7ff",
+                        "secondary": "#29676f",
+                        "surface-container-low": "#fff1ea",
+                        "background": "#fff8f5",
+                        "primary-fixed": "#f1daff",
+                        "secondary-fixed": "#b0edf6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#3d2900",
+                        "surface-container": "#ffeade",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#cec3d2",
+                        "tertiary-fixed-dim": "#f1bf61",
+                        "on-error-container": "#93000a",
+                        "on-background": "#241913",
+                        "on-tertiary-container": "#d8a84d",
+                        "on-primary-fixed": "#2d004f",
+                        "secondary-fixed-dim": "#95d0d9",
+                        "inverse-primary": "#dfb7ff",
+                        "surface": "#fff8f5",
+                        "surface-container-high": "#f9e4d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Cinzel"],
+                        "label-caps": ["Inter"],
+                        "button-text": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Cinzel"],
+                        "headline-sm": ["Cinzel"],
+                        "display-lg": ["Cinzel"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .wireframe-crosshatch {
+            background: 
+                linear-gradient(45deg, transparent 49%, #241913 49%, #241913 51%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, #241913 49%, #241913 51%, transparent 51%);
+            background-size: 100% 100%;
+            background-color: #F0EAE0;
+            opacity: 0.15;
+        }
+        .magical-glow {
+            box-shadow: 4px 4px 0px 0px #430d6e;
+        }
+        .transition-magical {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #empty-state-canvas {
+            display: none;
+        }
+        #empty-state-canvas.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-on-surface/20 dark:border-outline-variant docked full-width top-0 sticky z-50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-desktop py-stack-sm max-w-container-max mx-auto">
+<div class="font-display-lg text-display-lg text-primary dark:text-inverse-primary">The Candy Shop Wars</div>
+<nav class="hidden md:flex items-center gap-stack-md">
+<a class="font-headline-sm text-headline-sm dark:text-inverse-primary text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary pb-1 hover:underline decoration-2 underline-offset-4 transition-all duration-300 ease-in-out" href="#">Home</a>
+<a class="font-headline-sm text-headline-sm dark:text-inverse-primary text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 hover:underline decoration-2 underline-offset-4 transition-all duration-300 ease-in-out" href="#">Favorites</a>
+</nav>
+<div class="flex items-center gap-stack-sm">
+<div class="bg-surface-container-low px-4 py-2 border border-on-surface/20 flex items-center gap-2 rounded-lg">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md font-body-md w-48" placeholder="Search the archive..." type="text"/>
+</div>
+<button class="text-primary hover:bg-primary/5 p-2 rounded-full transition-magical">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg min-h-screen">
+<header class="mb-stack-lg border-l-4 border-primary pl-6">
+<h1 class="font-display-lg text-display-lg text-primary mb-2">Vault of Desires</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">Your curated collection of supernatural confections.</p>
+</header>
+<!-- Favorites Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter" id="favorites-grid">
+<!-- Card 1 -->
+<div class="favorite-card group bg-surface border border-on-surface/20 p-stack-sm hover:magical-glow transition-magical flex flex-col h-full" id="card-1">
+<div class="relative h-64 w-full wireframe-crosshatch overflow-hidden border border-on-surface/10 mb-stack-sm">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A detailed, technical architectural drawing of a glowing purple candy piece with swirling celestial patterns. The background is a minimalist, slightly textured paper-like cream, following a high-end wireframe aesthetic with sharp vector lines and Deep Purple accents. Lighting is soft and atmospheric, highlighting the magical nature of the object." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXwTnIGqagLZiuahciFDF66I5sqt-WOduoxdXMGd5ZMDKW95w3uaHRLvjIHMa7tI9HUO4gnHgy1pS388alMwdpp1Rfmpv9JNF7esZbvbBNsNf_2BDsk_3HKYTkimyfGQ5L68J-VZmF7cil_1qXwNbnDbhmbniGzt1dfzWGl_DtjZlGBY9B5W91DWIE31xPpeZlACPrKZeRAdVrlo4HGWcxmf6IUM0E8R6hhfrONb2fphSsfbSAn47en8XCrme1jMAxW035gzVuLXzY"/>
+<div class="absolute top-2 right-2">
+<button class="bg-surface/90 hover:bg-error/10 hover:text-error p-2 border border-on-surface/20 transition-magical rounded-lg group/remove" onclick="removeFavorite('card-1')">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Moonlight Taffy</h3>
+<span class="font-label-caps text-label-caps text-secondary border border-secondary px-2 py-1 rounded-pill">TIME-WARP</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Allows the consumer to stretch seconds into minutes, but leaves a faint silver glow on the tongue for 24 hours.</p>
+</div>
+<div class="mt-auto pt-4 border-t border-on-surface/5 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-tertiary">RARITY: LEGENDARY</span>
+<span class="font-headline-sm text-headline-sm text-on-primary-fixed-variant">12.00 G</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="favorite-card group bg-surface border border-on-surface/20 p-stack-sm hover:magical-glow transition-magical flex flex-col h-full" id="card-2">
+<div class="relative h-64 w-full wireframe-crosshatch overflow-hidden border border-on-surface/10 mb-stack-sm">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity" data-alt="An intricate technical illustration of a vibrant teal peppermint leaf that appears to be made of crystal. Set against a clean, off-white background with subtle architectural grid lines. The style is professional and minimalist, with sharp outlines in Dark Cocoa and accents of Antique Gold. The lighting is crisp and surgical, emphasizing the alchemy theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlV4Je3tsLIa5R1KV1ZYNiIzfcJE-XAqCLmIwi5FvtfNMioXfn3Czc5dpSzD19j1wcgWowlvGh4_8QA_NKUi6mee0_1bkgb0O019nj5FJUeYHl1oJJP_QO1ww0zFRBinW6-iC8uU7WeIjcKJKYLusXr8IReC7Qu48LtksHAKFqgSoCiVlEiuIbvCfAngL6A9Uqadr3DVLkNkZDK3K1v_onfv1J6LtvgX0nbNkKcItebUswtEdmGkXpa6AvBnGFDk7cvyXGQessNvfc"/>
+<div class="absolute top-2 right-2">
+<button class="bg-surface/90 hover:bg-error/10 hover:text-error p-2 border border-on-surface/20 transition-magical rounded-lg group/remove" onclick="removeFavorite('card-2')">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Levitation Licorice</h3>
+<span class="font-label-caps text-label-caps text-secondary border border-secondary px-2 py-1 rounded-pill">FLIGHT</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Black ropes infused with cloud extract. Defies gravity for up to ten minutes of vertical ascent.</p>
+</div>
+<div class="mt-auto pt-4 border-t border-on-surface/5 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-tertiary">RARITY: UNCOMMON</span>
+<span class="font-headline-sm text-headline-sm text-on-primary-fixed-variant">4.50 G</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="favorite-card group bg-surface border border-on-surface/20 p-stack-sm hover:magical-glow transition-magical flex flex-col h-full" id="card-3">
+<div class="relative h-64 w-full wireframe-crosshatch overflow-hidden border border-on-surface/10 mb-stack-sm">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity" data-alt="A minimalist blueprint-style drawing of a round golden chocolate truffle with glowing etched runes. The art is centered on a light cream surface with soft, hard-edged shadows. The aesthetic is modern and mystical, utilizing Deep Purple and Gold accents to denote magical significance. Highly structured and clean digital art." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOapgeaH8SnlmaH8soXrO_81RAKDPe_ziuOynXmoHJ-n9j5cj0fctjG3mxzDAwovM8PK91PoX1q-u7nOz4AfJImud1pG2GhpM_i3IYCNeRr-DpQIep-IPpIUyZa741UawOhIj_W972rtIPSRWRO4F-bd5rktVEhGZdfkDlbEjqK2u2WOKlO395vtVOz2NMXRybfXUGinlSwZKEooHfJGkkiu57qo-uR3gof_xH-47_-A1nfrmXykEgd8KHqywhwCchoZ-9N-PJQlI0"/>
+<div class="absolute top-2 right-2">
+<button class="bg-surface/90 hover:bg-error/10 hover:text-error p-2 border border-on-surface/20 transition-magical rounded-lg group/remove" onclick="removeFavorite('card-3')">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Truth Truffles</h3>
+<span class="font-label-caps text-label-caps text-secondary border border-secondary px-2 py-1 rounded-pill">PSIONIC</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Dark chocolate that forces the speaker to tell only the absolute truth for one hour. Handle with caution.</p>
+</div>
+<div class="mt-auto pt-4 border-t border-on-surface/5 flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-tertiary">RARITY: RARE</span>
+<span class="font-headline-sm text-headline-sm text-on-primary-fixed-variant">25.00 G</span>
+</div>
+</div>
+</section>
+<!-- Empty State (Hidden by default) -->
+<section class="flex-col items-center justify-center py-stack-lg text-center h-[614px]" id="empty-state-canvas">
+<div class="relative mb-stack-md">
+<div class="w-48 h-48 border-2 border-dashed border-primary/30 rounded-full flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-[64px] text-primary/40">auto_fix_off</span>
+</div>
+<div class="absolute -top-4 -right-4 w-12 h-12 border border-primary/20 bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">star</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Your Archive is Empty</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md mx-auto mb-stack-lg">The spirits suggest you haven't discovered your magical match yet. Explore the shop to find your destiny.</p>
+<a class="inline-flex items-center justify-center px-stack-md py-stack-sm bg-primary text-on-primary font-button-text text-button-text hover:magical-glow transition-magical gap-2" href="#">
+<span class="material-symbols-outlined">explore</span>
+                Start Exploring
+            </a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest full-width border-t border-on-surface/10 mt-stack-lg opacity-80 hover:opacity-100 transition-opacity">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary mb-4 md:mb-0">The Candy Shop Wars</div>
+<div class="flex gap-stack-md mb-4 md:mb-0">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-magical" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-magical" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-magical" href="#">Contact Archivist</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant">
+                © 2024 The Candy Shop Wars Catalog. All Rights Reserved.
+            </p>
+</div>
+</footer>
+<script>
+        function removeFavorite(cardId) {
+            const card = document.getElementById(cardId);
+            if (!card) return;
+
+            // Simple scale down and fade out animation
+            card.style.transform = 'scale(0.95)';
+            card.style.opacity = '0';
+            
+            setTimeout(() => {
+                card.remove();
+                checkEmptyState();
+            }, 300);
+        }
+
+        function checkEmptyState() {
+            const grid = document.getElementById('favorites-grid');
+            const emptyState = document.getElementById('empty-state-canvas');
+            const cards = grid.querySelectorAll('.favorite-card');
+
+            if (cards.length === 0) {
+                grid.style.display = 'none';
+                emptyState.classList.add('active');
+            }
+        }
+
+        // Lightweight hover micro-interaction for cards
+        document.querySelectorAll('.favorite-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if(img) img.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if(img) img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

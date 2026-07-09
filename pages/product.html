@@ -1,16 +1,197 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
   <title>Product Details | The Candy Shop Wars Catalog</title>
+
 </head>
+
 <body>
-  <main>
-    <h1>Product Details</h1>
-    <p>This page will be built soon.</p>
-    <p><a href="/">Back to Catalog</a></p>
+
+  <header class="site-header">
+
+    <nav class="container site-header__inner" aria-label="Main navigation">
+
+      <a href="/" class="site-logo">The Candy Shop Wars</a>
+
+      <div class="site-nav">
+
+        <a class="nav-link" href="/">Home</a>
+
+        <a class="nav-link" href="/pages/favorites.html">Favorites</a>
+
+        <a class="site-nav__cart" href="/pages/order.html" aria-label="View cart">
+
+          <span class="material-symbols-outlined">shopping_cart</span>
+
+        </a>
+
+      </div>
+
+      <a class="site-header__cart-mobile" href="/pages/order.html" aria-label="View cart">
+        <span class="material-symbols-outlined">shopping_cart</span>
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <main class="container page-main">
+
+    <a class="back-link" href="/">
+
+      <span class="material-symbols-outlined">arrow_back</span>
+
+      <span class="label-caps">Back to Catalog</span>
+
+    </a>
+
+
+
+    <section class="product-detail">
+
+      <div class="product-detail__gallery">
+
+        <div class="product-detail__image-frame wireframe-crosshatch">
+
+          <img id="product-image" src="" alt="" />
+
+        </div>
+
+      </div>
+
+
+
+      <div class="product-detail__info">
+
+        <header class="product-detail__meta">
+
+          <span id="product-category" class="chip"></span>
+
+          <h1 id="product-name" class="product-detail__name"></h1>
+
+          <p id="product-price" class="product-detail__price"></p>
+
+        </header>
+
+
+
+        <div class="divider"></div>
+
+
+
+        <div>
+
+          <h3 class="label-caps text-muted">Description</h3>
+
+          <p id="product-description" class="subtitle"></p>
+
+        </div>
+
+
+
+        <div class="info-box">
+
+          <h4 class="info-box__title label-caps">
+
+            <span class="material-symbols-outlined">magic_button</span>
+
+            Magical Properties
+
+          </h4>
+
+          <div class="info-row">
+
+            <span class="text-muted">Primary Effect:</span>
+
+            <span id="effect-primary"></span>
+
+          </div>
+
+          <div class="info-row">
+
+            <span class="text-muted">Duration:</span>
+
+            <span id="effect-duration"></span>
+
+          </div>
+
+          <div class="info-row">
+
+            <span class="text-muted">Side Effects:</span>
+
+            <span id="effect-side-effects"></span>
+
+          </div>
+
+        </div>
+
+
+
+        <div>
+
+          <div class="product-actions">
+
+            <button id="order-button" type="button" class="btn btn--primary">
+
+              <span class="material-symbols-outlined">shopping_basket</span>
+
+              ADD TO INVENTORY
+
+            </button>
+
+            <button id="favorite-button" type="button" class="btn btn--icon" aria-label="Add to favorites">
+
+              <span class="material-symbols-outlined">favorite</span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
+
+
+
+  <footer class="site-footer">
+
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__brand">The Candy Shop Wars</div>
+
+      <p class="text-muted">&copy; 2026 The Candy Shop Wars Catalog. All Rights Reserved.</p>
+
+    </div>
+
+  </footer>
+
+
+
+  <script type="module" src="/src/JS/product.js"></script>
+
 </body>
+
 </html>
+
+

@@ -4,13 +4,105 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
   <title>Order | The Candy Shop Wars Catalog</title>
 </head>
 <body>
-  <main>
-    <h1>Order Form</h1>
-    <p>This page will be built soon.</p>
-    <p><a href="/">Back to Catalog</a></p>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a href="/" class="site-logo">The Candy Shop Wars</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="/pages/favorites.html">Favorites</a>
+      </nav>
+      <a class="site-header__cart-mobile" href="/pages/order.html" aria-label="View cart">
+        <span class="material-symbols-outlined">shopping_cart</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container page-main">
+    <div class="page-intro">
+      <h2 class="section-title">Finalize Order Archive</h2>
+      <p class="text-muted">Documenting the acquisition of magical artifacts.</p>
+    </div>
+
+    <div class="order-layout">
+      <section>
+        <form id="order-form" class="order-form">
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="order-name">Full Name</label>
+              <input class="form-input" id="order-name" placeholder="Sebastian Moore" type="text" required />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="order-email">Email Address</label>
+              <input class="form-input" id="order-email" placeholder="archivist@fountain.com" type="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="order-phone">Phone Number</label>
+              <input class="form-input" id="order-phone" placeholder="+1 (555) 012-3456" type="tel" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="order-method">Acquisition Method</label>
+              <select class="form-input" id="order-method">
+                <option>Courier Falcon</option>
+                <option>Invisible Drop-off</option>
+                <option>Standard Postal</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="order-address">Delivery Coordinates (Address)</label>
+            <input class="form-input" id="order-address" placeholder="123 Fountain Lane, West Haven, CT" type="text" required />
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="order-notes">Special Handling Instructions</label>
+            <textarea class="form-input" id="order-notes" placeholder="Mention any magical sensitivities or containment requirements here..." rows="4"></textarea>
+          </div>
+
+          <div>
+            <button class="btn btn--primary btn--block" type="submit">
+              AUTHENTICATE &amp; SUBMIT ORDER
+            </button>
+            <p class="form-note label-caps">
+              <span class="material-symbols-outlined">lock</span>
+              SECURE ENCRYPTED ARCHIVE
+            </p>
+          </div>
+        </form>
+      </section>
+
+      <aside class="order-summary">
+        <h3 class="order-summary__title">Manifest Summary</h3>
+        <div id="order-summary-items" class="order-summary__items"></div>
+
+        <div class="trust-badge">
+          <span class="material-symbols-outlined">verified_user</span>
+          <div>
+            <p class="trust-badge__title label-caps">AUTHENTICITY GUARANTEED</p>
+            <p class="trust-badge__text">Archived at The Fountain, 2026</p>
+          </div>
+        </div>
+      </aside>
+    </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">The Candy Shop Wars</div>
+      <p class="text-muted">&copy; 2026 The Candy Shop Wars Catalog. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/JS/order.js"></script>
 </body>
 </html>
+

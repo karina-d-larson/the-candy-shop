@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Candy Shop Wars - Favorites</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#5f2e8a",
+                    "on-secondary-fixed": "#001f23",
+                    "on-secondary-container": "#306d75",
+                    "on-primary-container": "#cf9afd",
+                    "tertiary-container": "#593e00",
+                    "on-surface-variant": "#4c4450",
+                    "surface-tint": "#7847a4",
+                    "tertiary-fixed": "#ffdea7",
+                    "surface-dim": "#ead6cb",
+                    "secondary-container": "#b0edf6",
+                    "on-tertiary-fixed": "#271900",
+                    "on-secondary-fixed-variant": "#034f56",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#f3dfd3",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fff8f5",
+                    "surface-container-highest": "#f3dfd3",
+                    "inverse-on-surface": "#ffede4",
+                    "inverse-surface": "#3a2e27",
+                    "primary-container": "#5b2a86",
+                    "error": "#ba1a1a",
+                    "on-surface": "#241913",
+                    "outline": "#7d7481",
+                    "on-tertiary-fixed-variant": "#5e4200",
+                    "on-secondary": "#ffffff",
+                    "primary": "#430d6e",
+                    "primary-fixed-dim": "#dfb7ff",
+                    "secondary": "#29676f",
+                    "surface-container-low": "#fff1ea",
+                    "background": "#fff8f5",
+                    "primary-fixed": "#f1daff",
+                    "secondary-fixed": "#b0edf6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#3d2900",
+                    "surface-container": "#ffeade",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#cec3d2",
+                    "tertiary-fixed-dim": "#f1bf61",
+                    "on-error-container": "#93000a",
+                    "on-background": "#241913",
+                    "on-tertiary-container": "#d8a84d",
+                    "on-primary-fixed": "#2d004f",
+                    "secondary-fixed-dim": "#95d0d9",
+                    "inverse-primary": "#dfb7ff",
+                    "surface": "#fff8f5",
+                    "surface-container-high": "#f9e4d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "stack-lg": "48px",
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Cinzel"],
+                    "label-caps": ["Inter"],
+                    "button-text": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Cinzel"],
+                    "headline-sm": ["Cinzel"],
+                    "display-lg": ["Cinzel"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .wireframe-crosshatch {
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(0, 0, 0, 0.05) 10px,
+                rgba(0, 0, 0, 0.05) 11px
+            );
+        }
+        .active-underglow {
+            box-shadow: 0 4px 0 0 #430d6e;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-on-surface/20 dark:border-outline-variant docked full-width top-0 sticky z-50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-sm max-w-container-max mx-auto">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary dark:text-inverse-primary">The Candy Shop Wars</h1>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary pb-1 transition-all duration-300 ease-in-out hover:underline decoration-2 underline-offset-4" href="#">Home</a>
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary dark:border-inverse-primary pb-1 transition-all duration-300 ease-in-out hover:underline decoration-2 underline-offset-4" href="#">Favorites</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-primary dark:text-inverse-primary p-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile py-stack-lg">
+<!-- Header Section -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Saved Rarities</h2>
+<p class="text-on-surface-variant max-w-md">Your personal archive of supernatural sweets and alchemical curiosities.</p>
+</section>
+<!-- Favorites List (Populated State) -->
+<div class="space-y-stack-sm" id="favorites-list">
+<!-- Item Card 1 -->
+<div class="flex flex-row items-center gap-gutter p-stack-sm border border-on-surface/20 bg-surface-container-low transition-all hover:bg-surface-container active-underglow">
+<div class="w-24 h-24 bg-surface-container-highest flex-shrink-0 wireframe-crosshatch flex items-center justify-center border border-on-surface/10">
+<span class="material-symbols-outlined text-outline text-4xl">inventory_2</span>
+</div>
+<div class="flex-grow flex flex-col justify-center gap-1">
+<span class="font-label-caps text-label-caps text-secondary">TIME-WARP</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Lightning Lollies</h3>
+<div class="text-tertiary-fixed-dim bg-tertiary font-label-caps text-[10px] px-2 py-0.5 rounded-full inline-block w-fit">EXTREMELY RARE</div>
+</div>
+<button aria-label="Remove from favorites" class="p-4 text-error hover:bg-error-container rounded-lg transition-colors" onclick="this.closest('.flex').remove(); checkEmpty();">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<!-- Item Card 2 -->
+<div class="flex flex-row items-center gap-gutter p-stack-sm border border-on-surface/20 bg-surface-container-low transition-all hover:bg-surface-container active-underglow">
+<div class="w-24 h-24 bg-surface-container-highest flex-shrink-0 wireframe-crosshatch flex items-center justify-center border border-on-surface/10">
+<span class="material-symbols-outlined text-outline text-4xl">auto_fix_high</span>
+</div>
+<div class="flex-grow flex flex-col justify-center gap-1">
+<span class="font-label-caps text-label-caps text-secondary">LEVITATION</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Gravity Gumdrops</h3>
+<div class="text-on-tertiary-container bg-tertiary-container font-label-caps text-[10px] px-2 py-0.5 rounded-full inline-block w-fit">COMMON</div>
+</div>
+<button aria-label="Remove from favorites" class="p-4 text-error hover:bg-error-container rounded-lg transition-colors" onclick="this.closest('.flex').remove(); checkEmpty();">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+<!-- Item Card 3 -->
+<div class="flex flex-row items-center gap-gutter p-stack-sm border border-on-surface/20 bg-surface-container-low transition-all hover:bg-surface-container active-underglow">
+<div class="w-24 h-24 bg-surface-container-highest flex-shrink-0 wireframe-crosshatch flex items-center justify-center border border-on-surface/10">
+<span class="material-symbols-outlined text-outline text-4xl">visibility</span>
+</div>
+<div class="flex-grow flex flex-col justify-center gap-1">
+<span class="font-label-caps text-label-caps text-secondary">INVISIBILITY</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-tight">Ghostly Gobstoppers</h3>
+<div class="text-on-secondary-container bg-secondary-container font-label-caps text-[10px] px-2 py-0.5 rounded-full inline-block w-fit">UNCOMMON</div>
+</div>
+<button aria-label="Remove from favorites" class="p-4 text-error hover:bg-error-container rounded-lg transition-colors" onclick="this.closest('.flex').remove(); checkEmpty();">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Empty State Container -->
+<div class="hidden flex flex-col items-center justify-center py-stack-lg text-center space-y-stack-md" id="empty-state">
+<div class="w-24 h-24 rounded-full bg-surface-container-highest flex items-center justify-center mb-stack-sm border-2 border-dashed border-outline">
+<span class="material-symbols-outlined text-outline text-5xl">folder_off</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Archive is Empty</h3>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-xs">It seems you haven't discovered any magical sweets worth bookmarking yet. Explore the shop to find your destiny.</p>
+<button class="bg-primary text-on-primary font-button-text text-button-text px-8 py-4 rounded-lg active-underglow transition-transform active:translate-y-1">
+                Explore Shop
+            </button>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest full-width flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md mt-stack-lg border-t border-on-surface/10 opacity-80 transition-opacity hover:opacity-100">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary mb-4 md:mb-0">
+            The Candy Shop Wars
+        </div>
+<div class="flex flex-col items-center md:items-end gap-2">
+<div class="flex gap-4 mb-2">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors" href="#">Contact Archivist</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant">© 2024 The Candy Shop Wars Catalog. All Rights Reserved.</p>
+</div>
+</footer>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden sticky bottom-0 w-full bg-surface border-t border-on-surface/10 flex justify-around items-center py-stack-sm z-50">
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-caps mt-1">HOME</span>
+</a>
+<a class="flex flex-col items-center text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="text-[10px] font-label-caps mt-1">FAVORITES</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-label-caps mt-1">SEARCH</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-caps mt-1">PROFILE</span>
+</a>
+</nav>
+<script>
+        function checkEmpty() {
+            const list = document.getElementById('favorites-list');
+            const emptyState = document.getElementById('empty-state');
+            
+            if (list.children.length === 0) {
+                list.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+            }
+        }
+
+        // Visual interaction for cards
+        document.querySelectorAll('#favorites-list > div').forEach(card => {
+            card.addEventListener('touchstart', () => card.classList.add('active-underglow'));
+            card.addEventListener('touchend', () => card.classList.remove('active-underglow'));
+        });
+    </script>
+</body></html>

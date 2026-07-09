@@ -1,17 +1,142 @@
 <!doctype html>
+
 <html lang="en">
+
   <head>
+
     <meta charset="UTF-8" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>the-candy-shop</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+
+      rel="stylesheet"
+
+    />
+
+    <title>The Candy Shop Wars | Archive</title>
+
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/JS/main.js"></script>
+
+    <header class="site-header">
+
+      <div class="container site-header__inner">
+
+        <a href="/" class="site-logo">The Candy Shop Wars</a>
+
+
+
+        <nav class="site-nav" aria-label="Main navigation">
+
+          <a class="nav-link nav-link--active" href="/">Home</a>
+
+          <a class="nav-link" href="/pages/favorites.html">Favorites</a>
+
+          <a class="site-nav__cart" href="/pages/order.html" aria-label="View cart">
+            <span class="material-symbols-outlined">shopping_cart</span>
+          </a>
+
+        </nav>
+
+
+
+        <a class="site-header__cart-mobile" href="/pages/order.html" aria-label="View cart">
+
+          <span class="material-symbols-outlined">shopping_cart</span>
+
+        </a>
+
+      </div>
+
+    </header>
+
+
+
+    <main class="container page-main">
+
+      <section class="catalog-hero">
+
+        <div class="catalog-hero__row">
+
+          <div class="catalog-hero__intro">
+
+            <span class="eyebrow">Inventory Archivist</span>
+
+            <h1 class="page-title">Artifact Catalog</h1>
+
+            <p class="subtitle">
+
+              A comprehensive repository of supernatural confectionery. Handle with care; some entries are known to
+
+              bypass standard causality.
+
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <div class="search-box">
+
+        <input
+
+          class="search-input"
+
+          placeholder="Search magical inventory..."
+
+          type="text"
+
+          data-search-input
+
+        />
+
+        <span class="material-symbols-outlined">search</span>
+
+      </div>
+
+
+      <div id="product-grid" class="product-grid"></div>
+
+    </main>
+
+
+
+    <footer class="site-footer">
+
+      <div class="container site-footer__inner">
+
+        <div class="site-footer__brand">The Candy Shop Wars</div>
+
+        <div class="site-footer__links">
+
+          <a class="site-footer__link" href="/pages/design-documents.html">Design Document</a>
+
+        </div>
+ 
+      </div>
+      
+      <p class="text-muted">&copy; 2026 The Candy Shop Wars Catalog. All Rights Reserved.</p>
+
+    </footer>
+
+
+
+    <script type="module" src="/src/JS/catalog.js"></script>
+
   </body>
-  <footer> 
-    <p>&copy; 2026 The Candy Shop Wars Catalog </p> 
-    <a href="pages/design-documents.html">Design Document</a> 
-  </footer>
+
 </html>
+
+

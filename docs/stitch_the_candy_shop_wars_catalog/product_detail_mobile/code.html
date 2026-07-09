@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Details - The Candy Shop Wars</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#5f2e8a",
+                    "on-secondary-fixed": "#001f23",
+                    "on-secondary-container": "#306d75",
+                    "on-primary-container": "#cf9afd",
+                    "tertiary-container": "#593e00",
+                    "on-surface-variant": "#4c4450",
+                    "surface-tint": "#7847a4",
+                    "tertiary-fixed": "#ffdea7",
+                    "surface-dim": "#ead6cb",
+                    "secondary-container": "#b0edf6",
+                    "on-tertiary-fixed": "#271900",
+                    "on-secondary-fixed-variant": "#034f56",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#f3dfd3",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fff8f5",
+                    "surface-container-highest": "#f3dfd3",
+                    "inverse-on-surface": "#ffede4",
+                    "inverse-surface": "#3a2e27",
+                    "primary-container": "#5b2a86",
+                    "error": "#ba1a1a",
+                    "on-surface": "#241913",
+                    "outline": "#7d7481",
+                    "on-tertiary-fixed-variant": "#5e4200",
+                    "on-secondary": "#ffffff",
+                    "primary": "#430d6e",
+                    "primary-fixed-dim": "#dfb7ff",
+                    "secondary": "#29676f",
+                    "surface-container-low": "#fff1ea",
+                    "background": "#fff8f5",
+                    "primary-fixed": "#f1daff",
+                    "secondary-fixed": "#b0edf6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#3d2900",
+                    "surface-container": "#ffeade",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#cec3d2",
+                    "tertiary-fixed-dim": "#f1bf61",
+                    "on-error-container": "#93000a",
+                    "on-background": "#241913",
+                    "on-tertiary-container": "#d8a84d",
+                    "on-primary-fixed": "#2d004f",
+                    "secondary-fixed-dim": "#95d0d9",
+                    "inverse-primary": "#dfb7ff",
+                    "surface": "#fff8f5",
+                    "surface-container-high": "#f9e4d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "stack-lg": "48px",
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Cinzel"],
+                    "label-caps": ["Inter"],
+                    "button-text": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Cinzel"],
+                    "headline-sm": ["Cinzel"],
+                    "display-lg": ["Cinzel"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Wireframe Crosshatch Pattern */
+        .wireframe-pattern {
+            background-color: #f3dfd3;
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(76, 68, 80, 0.1) 10px, rgba(76, 68, 80, 0.1) 11px),
+                              repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(76, 68, 80, 0.1) 10px, rgba(76, 68, 80, 0.1) 11px);
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #430d6e;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-on-surface/20 dark:border-outline-variant docked full-width top-0 sticky z-50 transition-all duration-300 ease-in-out">
+<nav class="flex justify-between items-center w-full px-margin-mobile py-stack-sm md:px-margin-desktop max-w-container-max mx-auto">
+<div class="font-display-lg-mobile text-display-lg-mobile text-primary dark:text-inverse-primary">The Candy Shop Wars</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-on-surface-variant dark:text-outline-variant">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="flex-grow">
+<!-- Back Link Section -->
+<div class="px-margin-mobile pt-stack-md pb-stack-sm">
+<a class="flex items-center gap-2 text-secondary font-button-text text-button-text hover:underline decoration-2 underline-offset-4" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+<span>Back to Archives</span>
+</a>
+</div>
+<!-- Product Details Container - Mobile Stacking Layout -->
+<article class="flex flex-col gap-0 px-margin-mobile pb-stack-lg max-w-container-max mx-auto md:px-margin-desktop">
+<!-- Hero Image Wireframe Area -->
+<section class="w-full aspect-square wireframe-pattern border-2 border-primary/20 flex items-center justify-center relative overflow-hidden">
+<!-- Image with data-alt for generation -->
+<img class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40" data-alt="A cinematic, high-detail macro shot of a glowing, mystical candy artifact known as a 'Levitation Lozenge'. The candy is a translucent deep purple jewel with golden swirling internal structures, hovering slightly above a dark cocoa textured surface. The lighting is moody and magical, with tiny golden particles suspended in the air. The overall aesthetic follows a refined wireframe minimalism with architectural crispness and a primary palette of deep purple and antique gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTVwsAjNigHEE1BkBjsk9IXos3JtbrEziMIAae87tgPscdpkQygJYm6R9juVx_vnldciBwuFcrKB54NtcfXcSw4jKe_jS5vjQYk_y2ze094V--wlarpQeEigxGG5UV9CJj5Yr5pApOiD9LR5BtXWlR1fNMhfA3kp9HM65LGgYc7K8iApr-UeZFYfc9HckYRFTDaeFruZTaXuepAcBU_NG_m__6Bw60DQJTiFC8mNkisxQ3gzTImiYqRAo6PV5VKdogOro9TXG4HKOY"/>
+<div class="z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary scale-[3]" style="font-variation-settings: 'wght' 200;">ink_highlighter</span>
+<p class="mt-4 font-label-caps text-label-caps text-on-surface-variant uppercase">Artifact Visual Placeholder</p>
+</div>
+</section>
+<!-- Product Identity -->
+<section class="mt-stack-md flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<div class="flex flex-col gap-1">
+<span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Enchanted Item</span>
+<h1 class="font-headline-md text-headline-md text-primary">Levitation Lozenge</h1>
+</div>
+<div class="bg-secondary-container px-3 py-1 rounded-full">
+<span class="font-label-caps text-label-caps text-on-secondary-container">RARITY: LEGENDARY</span>
+</div>
+</div>
+<div class="text-on-surface-variant font-body-lg text-body-lg border-l-4 border-primary/10 pl-4 py-2 italic">
+                    "A single taste defies the gravity of your situation. Use with extreme caution near low ceilings."
+                </div>
+</section>
+<!-- Attributes / Chips -->
+<section class="mt-stack-md">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant mb-3">Core Affinities</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 border border-secondary text-secondary font-button-text text-button-text rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">flight</span> Levitation
+                    </span>
+<span class="px-4 py-2 border border-secondary text-secondary font-button-text text-button-text rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">timer</span> 10m Duration
+                    </span>
+<span class="px-4 py-2 border border-secondary text-secondary font-button-text text-button-text rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bolt</span> Immediate Effect
+                    </span>
+</div>
+</section>
+<!-- Price and Inventory -->
+<section class="mt-stack-lg p-stack-md bg-surface-container border border-on-surface/10">
+<div class="flex justify-between items-center mb-stack-md">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Archival Fee</span>
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-tertiary-container">25 Gold Pellets</span>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Status</span>
+<p class="text-secondary font-bold">In Vault</p>
+</div>
+</div>
+<!-- Large Touch Target Actions -->
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary text-on-primary py-4 px-6 font-button-text text-button-text rounded-none hard-shadow active:translate-y-1 active:translate-x-1 active:shadow-none transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+                        ADD TO INVENTORY
+                    </button>
+<button class="w-full bg-transparent border-2 border-secondary text-secondary py-4 px-6 font-button-text text-button-text rounded-none hover:bg-secondary/5 transition-colors flex items-center justify-center gap-3">
+<span class="material-symbols-outlined">auto_stories</span>
+                        READ LORE
+                    </button>
+</div>
+</section>
+<!-- Metadata Section (Bentoish) -->
+<section class="mt-stack-lg grid grid-cols-2 gap-4">
+<div class="p-4 border border-outline-variant bg-surface-container-low flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Origin</span>
+<p class="font-body-md text-body-md">The Secret Library</p>
+</div>
+<div class="p-4 border border-outline-variant bg-surface-container-low flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Flavor Profile</span>
+<p class="font-body-md text-body-md">Ozone &amp; Plum</p>
+</div>
+<div class="col-span-2 p-4 border border-outline-variant bg-surface-container-low flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Magical Side-Effects</span>
+<p class="font-body-md text-body-md">May cause mild vertigo and an irresistible urge to hum at a high pitch.</p>
+</div>
+</section>
+</article>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest border-t border-on-surface/10 flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md mt-stack-lg">
+<div class="flex flex-col items-center md:items-start gap-2 mb-stack-md md:mb-0">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary">The Candy Shop Wars</div>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant opacity-80">© 2024 The Candy Shop Wars Catalog. All Rights Reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-opacity opacity-80 hover:opacity-100" href="#">Contact Archivist</a>
+</div>
+</footer>
+<!-- Interactive Layer: Simple Scroll Observer for Header -->
+<script>
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.replace('py-stack-sm', 'py-2');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.replace('py-2', 'py-stack-sm');
+            }
+        });
+    </script>
+</body></html>

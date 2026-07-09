@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Candy Shop Wars - Catalog</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#5f2e8a",
+                    "on-secondary-fixed": "#001f23",
+                    "on-secondary-container": "#306d75",
+                    "on-primary-container": "#cf9afd",
+                    "tertiary-container": "#593e00",
+                    "on-surface-variant": "#4c4450",
+                    "surface-tint": "#7847a4",
+                    "tertiary-fixed": "#ffdea7",
+                    "surface-dim": "#ead6cb",
+                    "secondary-container": "#b0edf6",
+                    "on-tertiary-fixed": "#271900",
+                    "on-secondary-fixed-variant": "#034f56",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#f3dfd3",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fff8f5",
+                    "surface-container-highest": "#f3dfd3",
+                    "inverse-on-surface": "#ffede4",
+                    "inverse-surface": "#3a2e27",
+                    "primary-container": "#5b2a86",
+                    "error": "#ba1a1a",
+                    "on-surface": "#241913",
+                    "outline": "#7d7481",
+                    "on-tertiary-fixed-variant": "#5e4200",
+                    "on-secondary": "#ffffff",
+                    "primary": "#430d6e",
+                    "primary-fixed-dim": "#dfb7ff",
+                    "secondary": "#29676f",
+                    "surface-container-low": "#fff1ea",
+                    "background": "#fff8f5",
+                    "primary-fixed": "#f1daff",
+                    "secondary-fixed": "#b0edf6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#3d2900",
+                    "surface-container": "#ffeade",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#cec3d2",
+                    "tertiary-fixed-dim": "#f1bf61",
+                    "on-error-container": "#93000a",
+                    "on-background": "#241913",
+                    "on-tertiary-container": "#d8a84d",
+                    "on-primary-fixed": "#2d004f",
+                    "secondary-fixed-dim": "#95d0d9",
+                    "inverse-primary": "#dfb7ff",
+                    "surface": "#fff8f5",
+                    "surface-container-high": "#f9e4d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "stack-lg": "48px",
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Cinzel"],
+                    "label-caps": ["Inter"],
+                    "button-text": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Cinzel"],
+                    "headline-sm": ["Cinzel"],
+                    "display-lg": ["Cinzel"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fff8f5;
+            color: #241913;
+            -webkit-font-smoothing: antialiased;
+        }
+        .wireframe-cross-hatch {
+            background-color: #f3dfd3;
+            background-image: linear-gradient(45deg, #cec3d2 25%, transparent 25%, transparent 50%, #cec3d2 50%, #cec3d2 75%, transparent 75%, transparent);
+            background-size: 20px 20px;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #430d6e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface sticky top-0 z-50 border-b border-on-surface/20 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-mobile py-stack-sm max-w-container-max mx-auto">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-primary">The Candy Shop Wars</h1>
+<div class="flex items-center gap-4">
+<button aria-label="Cart" class="p-2 text-primary">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow px-margin-mobile py-stack-md max-w-container-max mx-auto w-full">
+<!-- Welcome Section -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm">Archival Inventory</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Explore the collection of supernatural artifacts and mystical confections.</p>
+</section>
+<!-- Search & Filters -->
+<section class="mb-stack-lg">
+<div class="flex flex-col gap-stack-sm">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full h-12 pl-10 pr-4 bg-surface-container-low border border-on-surface/20 rounded-lg font-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Search the grimoire..." type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<span class="px-4 py-1.5 border border-primary text-primary font-label-caps text-label-caps rounded-full whitespace-nowrap bg-primary-fixed/30">All Items</span>
+<span class="px-4 py-1.5 border border-secondary text-secondary font-label-caps text-label-caps rounded-full whitespace-nowrap">Levitation</span>
+<span class="px-4 py-1.5 border border-secondary text-secondary font-label-caps text-label-caps rounded-full whitespace-nowrap">Time-Warp</span>
+<span class="px-4 py-1.5 border border-secondary text-secondary font-label-caps text-label-caps rounded-full whitespace-nowrap">Invisibility</span>
+</div>
+</div>
+</section>
+<!-- Product Grid (Single Column for Mobile) -->
+<section class="grid grid-cols-1 gap-gutter">
+<!-- Card 1 -->
+<div class="border border-on-surface/20 p-4 flex flex-col gap-3 group active:bg-surface-container-low transition-colors">
+<div class="relative aspect-square w-full wireframe-cross-hatch border border-on-surface/10 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="A cinematic, high-angle studio shot of a shimmering, translucent purple rock candy crystal that glows with a faint magical aura. The background is a clean, minimalist off-white surface with soft, directional shadows, maintaining a refined magical minimalist aesthetic. The lighting is crisp and modern, highlighting the geometric edges of the crystal. The overall mood is mysterious and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMCeqD_7EIedfBNyYKrUWcZMaL5n8XdL0sHbmEdVE3i9029irqdMnENq43ycM27IyeOqFnsVCy9DgMzF0M9j6iwzLOFlTV3HiwnWsBVFDoZj71P_up7SMXJSztha-XoVQrTspWbv7HIggMAvzVbyhtac_hJjGYZOaKOxe7PbGw5CHcjzKZCWHhfQA1Tm_-7FaOg5wnhGHqeISxQMTkuuTaYAJD-KlFRZ8Fr8sX8KbaAK6ko-4Z-s0UdehrLA529EiZFdGvSTAeyeEt"/>
+<div class="absolute top-2 right-2 bg-surface px-2 py-1 border border-on-surface/20 font-label-caps text-label-caps text-primary">RARE</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Levitating Lemon Drops</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Defies gravity for 15 minutes. Not recommended for outdoor use without a tether.</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-sm text-headline-sm text-tertiary">12.50 GP</span>
+<button class="bg-primary text-on-primary font-button-text text-button-text h-12 px-6 rounded-lg hard-shadow active:translate-y-1 active:shadow-none transition-all">Add to Inventory</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="border border-on-surface/20 p-4 flex flex-col gap-3 group active:bg-surface-container-low transition-colors">
+<div class="relative aspect-square w-full wireframe-cross-hatch border border-on-surface/10 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="A minimalist product photo of a deep emerald green chewy candy with gold leaf accents, presented in a clean digital grimoire style. The setting is a structured, white void with architectural shadows. The candy has a sophisticated, almost metallic sheen. The image follows a high-end archival aesthetic with purposeful whitespace and a restricted color palette of green, gold, and white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDIPZDqC0P62s2UXlIaVVC_9b3puDsiThRw5xic-qcet8-UAjECNVxtRYRmmmlAgAoUdTb5fy_YbA3qMdi9hlJsNygvQlj8RupMvodWww1TJJY_dIZQmyLz8WKRBfGZW8S4HXeP2ZFPrGEOEAnYYmM5dAQDciWRw4ksXcvMK7TOvInt3mUB-14YZ0GKAQa7hON1r4vNjkjeUVJEjNvMlOq9Ec6QPa7zj4xL2RL45Ehj1MBpIlQIxmtdaDE9VlQPnumDWRdDACzxaGe"/>
+<div class="absolute top-2 right-2 bg-surface px-2 py-1 border border-on-surface/20 font-label-caps text-label-caps text-primary">UNCOMMON</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Time-Twister Toffee</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">Slows down local perception of time. Perfect for exams or difficult conversations.</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-sm text-headline-sm text-tertiary">25.00 GP</span>
+<button class="bg-primary text-on-primary font-button-text text-button-text h-12 px-6 rounded-lg hard-shadow active:translate-y-1 active:shadow-none transition-all">Add to Inventory</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="border border-on-surface/20 p-4 flex flex-col gap-3 group active:bg-surface-container-low transition-colors">
+<div class="relative aspect-square w-full wireframe-cross-hatch border border-on-surface/10 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="A high-contrast digital illustration of a dark cocoa chocolate bar with glowing silver runes etched into its surface. The style is architectural and clean, using a wireframe-inspired layout. The lighting is dramatic, casting sharp shadows on a cream-colored minimalist background. The mood is intellectual and adventurous, suggesting a high-end supernatural artifact for an inventory system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkfzqnMzY9BCMurGbeHRVbdB_Z7e6fXjgdfSofjrQU1tjYkMItLQcoNil_iBRYfceA5DRRghhIiEXaNT5g3tQB7Fj-uFFGJdA0Yyg5pDf1UoJSxtd_WSIG9GjQPVxz7mCF9_OIV0QQeEm1A-fW8CaWWRnT1njuBXHMRWMhP5fJLO9tncV1XrgGLUP57o9QJYSo2oheiVf79iJk7kXdEA33lGRZmxjVurgLvCVHG724pJdIk09Q2u93Wka8K2Xxnctbv0tuhLPFzlQQ"/>
+<div class="absolute top-2 right-2 bg-surface px-2 py-1 border border-on-surface/20 font-label-caps text-label-caps text-primary">LEGENDARY</div>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Memory Melts</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">A single bite allows you to relive any memory from the last 24 hours with perfect clarity.</p>
+</div>
+<div class="flex justify-between items-center mt-2">
+<span class="font-headline-sm text-headline-sm text-tertiary">150.00 GP</span>
+<button class="bg-primary text-on-primary font-button-text text-button-text h-12 px-6 rounded-lg hard-shadow active:translate-y-1 active:shadow-none transition-all">Add to Inventory</button>
+</div>
+</div>
+</section>
+<!-- Pagination / Load More -->
+<div class="mt-stack-lg flex justify-center">
+<button class="border border-secondary text-secondary font-button-text text-button-text h-12 px-8 rounded-lg hover:bg-secondary-container/20 active:bg-secondary-container/40 transition-colors">
+                View Older Records
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile py-stack-md mt-stack-lg border-t border-on-surface/10">
+<div class="mb-4 md:mb-0">
+<span class="font-headline-sm text-headline-sm text-primary">The Candy Shop Wars</span>
+</div>
+<div class="flex flex-col items-center gap-4">
+<div class="flex gap-4">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80 text-center">© 2024 The Candy Shop Wars Catalog. All Rights Reserved.</p>
+</div>
+</footer>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-on-surface/10 h-16 flex items-center justify-around z-50">
+<a class="flex flex-col items-center gap-1 text-primary font-bold border-b-2 border-primary pb-1" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary pb-1" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Favorites</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary pb-1" href="#">
+<span class="material-symbols-outlined">history_edu</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">History</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant hover:text-primary pb-1" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] uppercase font-bold tracking-tighter">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button - Supressed on this page as per logic if search is main, but here it fits as "New Entry" or "Quick Scan" -->
+<!-- Leaving FAB out to prioritize the clean grid and large tap targets of cards as per user's "simple, clean layout" request -->
+<script>
+        // Micro-interactions for accessibility and flair
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.classList.add('scale-95');
+            });
+            button.addEventListener('touchend', function() {
+                this.classList.remove('scale-95');
+            });
+        });
+
+        // Simple scroll header effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            const header = document.querySelector('header');
+            
+            if (currentScroll > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>

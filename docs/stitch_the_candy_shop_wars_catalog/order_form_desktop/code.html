@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Candy Shop Wars - Order Archive</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#5f2e8a",
+                        "on-secondary-fixed": "#001f23",
+                        "on-secondary-container": "#306d75",
+                        "on-primary-container": "#cf9afd",
+                        "tertiary-container": "#593e00",
+                        "on-surface-variant": "#4c4450",
+                        "surface-tint": "#7847a4",
+                        "tertiary-fixed": "#ffdea7",
+                        "surface-dim": "#ead6cb",
+                        "secondary-container": "#b0edf6",
+                        "on-tertiary-fixed": "#271900",
+                        "on-secondary-fixed-variant": "#034f56",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#f3dfd3",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#fff8f5",
+                        "surface-container-highest": "#f3dfd3",
+                        "inverse-on-surface": "#ffede4",
+                        "inverse-surface": "#3a2e27",
+                        "primary-container": "#5b2a86",
+                        "error": "#ba1a1a",
+                        "on-surface": "#241913",
+                        "outline": "#7d7481",
+                        "on-tertiary-fixed-variant": "#5e4200",
+                        "on-secondary": "#ffffff",
+                        "primary": "#430d6e",
+                        "primary-fixed-dim": "#dfb7ff",
+                        "secondary": "#29676f",
+                        "surface-container-low": "#fff1ea",
+                        "background": "#fff8f5",
+                        "primary-fixed": "#f1daff",
+                        "secondary-fixed": "#b0edf6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#3d2900",
+                        "surface-container": "#ffeade",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#cec3d2",
+                        "tertiary-fixed-dim": "#f1bf61",
+                        "on-error-container": "#93000a",
+                        "on-background": "#241913",
+                        "on-tertiary-container": "#d8a84d",
+                        "on-primary-fixed": "#2d004f",
+                        "secondary-fixed-dim": "#95d0d9",
+                        "inverse-primary": "#dfb7ff",
+                        "surface": "#fff8f5",
+                        "surface-container-high": "#f9e4d9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "stack-lg": "48px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Cinzel"],
+                        "label-caps": ["Inter"],
+                        "button-text": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Cinzel"],
+                        "headline-sm": ["Cinzel"],
+                        "display-lg": ["Cinzel"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .wireframe-crosshatch {
+            background-image: repeating-linear-gradient(45deg, #7d7481 0, #7d7481 1px, transparent 0, transparent 50%);
+            background-size: 10px 10px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-on-surface/20 dark:border-outline-variant docked full-width top-0 sticky z-50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-desktop py-stack-sm max-w-container-max mx-auto">
+<h1 class="font-display-lg text-display-lg text-primary dark:text-inverse-primary tracking-tighter">The Candy Shop Wars</h1>
+<nav class="hidden md:flex items-center space-x-gutter">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary pb-1 transition-all duration-300 ease-in-out hover:underline decoration-2 underline-offset-4" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary pb-1 transition-all duration-300 ease-in-out hover:underline decoration-2 underline-offset-4" href="#">Favorites</a>
+</nav>
+<div class="flex items-center gap-stack-sm">
+<div class="bg-surface-container-low rounded-lg flex items-center px-3 py-1.5 border border-outline/20">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">search</span>
+<span class="ml-2 text-on-surface-variant/60 font-label-caps">Search Archive...</span>
+</div>
+<button class="text-primary dark:text-inverse-primary p-2">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<div class="mb-stack-lg border-b border-outline/10 pb-stack-sm">
+<h2 class="font-headline-md text-headline-md text-primary">Finalize Order Archive</h2>
+<p class="text-on-surface-variant font-body-md mt-2">Documenting the acquisition of magical artifacts.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-stack-lg">
+<!-- Order Form Section -->
+<section class="md:col-span-8">
+<form class="space-y-stack-md">
+<!-- Identity Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">FULL NAME</label>
+<input class="bg-surface border border-outline/20 rounded-DEFAULT p-3 focus:ring-0 focus:border-primary transition-all duration-200 outline-none" placeholder="Sebastian Moore" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">EMAIL ADDRESS</label>
+<input class="bg-surface border border-outline/20 rounded-DEFAULT p-3 focus:ring-0 focus:border-primary transition-all duration-200 outline-none" placeholder="archivist@fountain.com" type="email"/>
+</div>
+</div>
+<!-- Contact/Shipping Section -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">PHONE NUMBER</label>
+<input class="bg-surface border border-outline/20 rounded-DEFAULT p-3 focus:ring-0 focus:border-primary transition-all duration-200 outline-none" placeholder="+1 (555) 012-3456" type="tel"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">ACQUISITION METHOD</label>
+<select class="bg-surface border border-outline/20 rounded-DEFAULT p-3 focus:ring-0 focus:border-primary transition-all duration-200 outline-none">
+<option>Courier Falcon</option>
+<option>Invisible Drop-off</option>
+<option>Standard Postal</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">DELIVERY COORDINATES (ADDRESS)</label>
+<input class="bg-surface border border-outline/20 rounded-DEFAULT p-3 focus:ring-0 focus:border-primary transition-all duration-200 outline-none" placeholder="123 Fountain Lane, West Haven, CT" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant">SPECIAL HANDLING INSTRUCTIONS</label>
+<textarea class="bg-surface border border-outline/20 rounded-DEFAULT p-3 focus:ring-0 focus:border-primary transition-all duration-200 outline-none resize-none" placeholder="Mention any magical sensitivities or containment requirements here..." rows="4"></textarea>
+</div>
+<!-- CTA -->
+<div class="pt-stack-md">
+<button class="w-full bg-primary text-on-primary font-button-text text-button-text py-4 rounded-DEFAULT hover:opacity-90 active:translate-y-0.5 transition-all shadow-[4px_4px_0px_0px] shadow-primary/20" type="submit">
+                            AUTHENTICATE &amp; SUBMIT ORDER
+                        </button>
+<p class="text-center text-label-caps text-on-surface-variant mt-stack-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[14px]">lock</span> SECURE ENCRYPTED ARCHIVE
+                        </p>
+</div>
+</form>
+</section>
+<!-- Order Summary Sidebar -->
+<aside class="md:col-span-4 space-y-stack-md">
+<div class="bg-surface-container-low border border-outline/10 p-gutter rounded-DEFAULT sticky top-[100px]">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-stack-md border-b border-outline/10 pb-2">Manifest Summary</h3>
+<div class="space-y-stack-md">
+<!-- Item 1 -->
+<div class="flex gap-stack-sm items-start">
+<div class="w-16 h-16 bg-surface-variant relative overflow-hidden border border-outline/20 flex-shrink-0">
+<div class="absolute inset-0 wireframe-crosshatch"></div>
+<img class="w-full h-full object-cover relative z-10" data-alt="A macro photograph of a glowing, translucent purple 'Moon Rocks' candy. The candy has a rough, crystalline texture and emits a soft, ethereal violet light from within. The background is a clean, minimalist studio setting with sharp architectural shadows, maintaining a professional archival feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5KCQ_48tgKb2vE7XjNA4MnjoHVqqI-zNB1P7_8aFyS0HiTpYcC59q-e3D0s_rBziGgttTS8zht7SdFWRBs0zZegSa5kdZC6SLDq0hF_yuoY_YJxGW8LWGMVcPAh20EFCks8gsDKFz3qle135uX9us1xO63GP-qIM4ttHsuVxetvg0TJuf2G2Z9SDShKrZp9f9sFqhMD6E3dLcGAwDlRBClyy7kcL6skhQ_7sre5-_mrwz80r5YrsQvPuptb-yPXgxJik31fR8qrsz"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-on-surface text-body-md">Moon Rocks</h4>
+<span class="text-tertiary font-bold">$12.50</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-label-caps uppercase tracking-widest">LEVITATION</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-stack-sm items-start">
+<div class="w-16 h-16 bg-surface-variant relative overflow-hidden border border-outline/20 flex-shrink-0">
+<div class="absolute inset-0 wireframe-crosshatch"></div>
+<img class="w-full h-full object-cover relative z-10" data-alt="Close-up of 'Shocking Toffee' candy, featuring a glossy dark brown surface with golden electrical patterns etched onto it. The lighting is focused and dramatic, highlighting the metallic gold details. The aesthetic is modern alchemical, presenting the candy as a high-value supernatural artifact on a clean cream surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyejDWurE1rLNUewp7G7k7wgN3ppMIwAa_R5NS8c1FZg6FCc9RkNdvbcIhnV44evLYeNBcKv2Zog6uJsRaRwSiHHiqjzDX1Zmf_YSaAh3FF86NbZMqtxUai6Xic25iPv1ytwcv_ulFtSsG5viiJ1RBH9jliNPqfx3F534UbVHMssoQO384m3PujflXXl3WYXJIXfYM8aZ-ylif6zYi9BoUTOQu-OTq4aGeVLFT9R-1huUqb8Th880puztadGu1eUhkrgn8HQSWe3K4"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<h4 class="font-bold text-on-surface text-body-md">Shocking Toffee</h4>
+<span class="text-tertiary font-bold">$18.00</span>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-label-caps uppercase tracking-widest">ENERGY</span>
+</div>
+</div>
+</div>
+<!-- Totals -->
+<div class="mt-stack-lg pt-stack-md border-t border-outline/20 space-y-2">
+<div class="flex justify-between text-on-surface-variant text-body-md">
+<span>Subtotal</span>
+<span>$30.50</span>
+</div>
+<div class="flex justify-between text-on-surface-variant text-body-md">
+<span>Courier Fee</span>
+<span>$4.99</span>
+</div>
+<div class="flex justify-between text-primary font-bold text-headline-sm pt-2">
+<span>Grand Total</span>
+<span>$35.49</span>
+</div>
+</div>
+<!-- Security Badge -->
+<div class="mt-stack-md p-4 bg-surface-container-highest rounded-DEFAULT flex gap-3 items-center">
+<span class="material-symbols-outlined text-primary">verified_user</span>
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant leading-tight">AUTHENTICITY GUARANTEED</p>
+<p class="text-[12px] text-on-surface/80">Archived at The Fountain, 2024</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest mt-stack-lg border-t border-on-surface/10 opacity-80 hover:opacity-100 transition-opacity">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-stack-md max-w-container-max mx-auto gap-4">
+<h2 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary">The Candy Shop Wars</h2>
+<nav class="flex gap-gutter">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary dark:hover:text-inverse-primary" href="#">Contact Archivist</a>
+</nav>
+<span class="font-body-md text-body-md text-on-surface dark:text-on-surface-variant">© 2024 The Candy Shop Wars Catalog. All Rights Reserved.</span>
+</div>
+</footer>
+<script>
+        // Micro-interaction: Focus effect for form inputs
+        document.querySelectorAll('input, textarea, select').forEach(element => {
+            element.addEventListener('focus', () => {
+                element.parentElement.querySelector('label').style.color = '#430d6e';
+            });
+            element.addEventListener('blur', () => {
+                element.parentElement.querySelector('label').style.color = '#4c4450';
+            });
+        });
+    </script>
+</body></html>

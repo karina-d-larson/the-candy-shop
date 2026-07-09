@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Candy Shop Wars - Product Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#5f2e8a",
+                    "on-secondary-fixed": "#001f23",
+                    "on-secondary-container": "#306d75",
+                    "on-primary-container": "#cf9afd",
+                    "tertiary-container": "#593e00",
+                    "on-surface-variant": "#4c4450",
+                    "surface-tint": "#7847a4",
+                    "tertiary-fixed": "#ffdea7",
+                    "surface-dim": "#ead6cb",
+                    "secondary-container": "#b0edf6",
+                    "on-tertiary-fixed": "#271900",
+                    "on-secondary-fixed-variant": "#034f56",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#f3dfd3",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fff8f5",
+                    "surface-container-highest": "#f3dfd3",
+                    "inverse-on-surface": "#ffede4",
+                    "inverse-surface": "#3a2e27",
+                    "primary-container": "#5b2a86",
+                    "error": "#ba1a1a",
+                    "on-surface": "#241913",
+                    "outline": "#7d7481",
+                    "on-tertiary-fixed-variant": "#5e4200",
+                    "on-secondary": "#ffffff",
+                    "primary": "#430d6e",
+                    "primary-fixed-dim": "#dfb7ff",
+                    "secondary": "#29676f",
+                    "surface-container-low": "#fff1ea",
+                    "background": "#fff8f5",
+                    "primary-fixed": "#f1daff",
+                    "secondary-fixed": "#b0edf6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#3d2900",
+                    "surface-container": "#ffeade",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#cec3d2",
+                    "tertiary-fixed-dim": "#f1bf61",
+                    "on-error-container": "#93000a",
+                    "on-background": "#241913",
+                    "on-tertiary-container": "#d8a84d",
+                    "on-primary-fixed": "#2d004f",
+                    "secondary-fixed-dim": "#95d0d9",
+                    "inverse-primary": "#dfb7ff",
+                    "surface": "#fff8f5",
+                    "surface-container-high": "#f9e4d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "stack-lg": "48px",
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Cinzel"],
+                    "label-caps": ["Inter"],
+                    "button-text": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Cinzel"],
+                    "headline-sm": ["Cinzel"],
+                    "display-lg": ["Cinzel"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .wireframe-crosshatch {
+            background-color: #f3dfd3;
+            background-image: linear-gradient(45deg, #7d7481 25%, transparent 25%, transparent 50%, #7d7481 50%, #7d7481 75%, transparent 75%, transparent);
+            background-size: 20px 20px;
+            opacity: 0.1;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px #430d6e;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed-variant">
+<!-- Top Navigation Bar -->
+<header class="bg-surface sticky top-0 z-50 border-b border-on-surface/20 w-full">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-stack-sm max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-md text-primary tracking-tight">The Candy Shop Wars</div>
+<div class="hidden md:flex items-center gap-stack-md">
+<a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-primary transition-all duration-300 decoration-2 underline-offset-4 hover:underline pb-1" href="#">Home</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-primary transition-all duration-300 decoration-2 underline-offset-4 hover:underline pb-1" href="#">Favorites</a>
+<div class="relative group">
+<span class="material-symbols-outlined text-primary cursor-pointer p-2 rounded-full hover:bg-primary-container/10 transition-colors" data-icon="shopping_cart">shopping_cart</span>
+</div>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg">
+<!-- Breadcrumb / Back Link -->
+<nav class="mb-stack-md">
+<a class="inline-flex items-center gap-2 text-secondary font-button-text hover:text-primary-fixed-dim transition-colors group" href="#">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+<span class="font-label-caps">Back to Catalog</span>
+<div class="h-[1px] w-0 group-hover:w-full bg-secondary transition-all duration-300"></div>
+</a>
+</nav>
+<!-- Product Detail Section: Asymmetric Layout -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Side: Large Product Image -->
+<div class="lg:col-span-7 relative group">
+<div class="aspect-[4/3] w-full border border-on-surface/20 bg-surface-container-low overflow-hidden relative">
+<div class="absolute inset-0 wireframe-crosshatch"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro studio photograph of a levitating piece of magical rock candy. The candy is a translucent deep violet with internal golden sparks. It is presented in a minimalist, high-key setting with a crisp white background, emphasizing its sharp, crystalline structure. Soft directional lighting highlights the facets of the candy, creating a magical and premium archival feel consistent with a digital grimoire aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHwKPQeExX5FahVn829mAf2-ViieNJLAsEPp1PUkLIrCseCoao6z725hRtqDonbb4FM6IQhmEe_ulfN_xnA30VN9Zc6n_KKHLIBYZoWGFGAZmvGcnO2X0K35buFFvB9t2bjRKT2Da_i7dVDIV7lNDh0AyJL53e-IIom4lxIIEyBldNITjZnW0uiOrM3Oc3ASbzGZ2kLSZqZy7j75t2Q53KmqdW9E5LFYtSdRaYP_ulODYYLzuzqKBZ0Ph0UVJaKdREr5qVeDZiFRUy"/>
+<!-- Detail Overlays -->
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-on-primary font-label-caps px-4 py-2 text-[10px] tracking-widest uppercase">Archived Specimen #42</span>
+</div>
+</div>
+<!-- Thumbnail Strip (Wireframe Style) -->
+<div class="grid grid-cols-4 gap-2 mt-4">
+<div class="aspect-square border-2 border-primary bg-surface-container-high overflow-hidden cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Close up view of crystalline structure of the purple candy with golden speckles, light background, minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxJs3jXnJ2_VCtnovo8njwPuryhd_MeYG2D-KBEn2vP0r80eoS2wU4IbKbRDLY-w6o-0usG810PzWeyrf5G8mWN-59aIBe5drzTKyfiNqrsQStx6yjCT5eu0ZlK9Pdlhy97PGyWL8-DWb7mz2wpLd4Ju0SKOEFHPn0A81QWmgEVIw6obX2jVfuEMG8pWRR8pCapgbgUkqBJ4K8zbdTpw3YrdgqyCypFAyx-ysULYzX-6mAK5PvBgT97_UXI2Mm-hJcVkJInZkNCySu"/>
+</div>
+<div class="aspect-square border border-on-surface/20 bg-surface-container-low overflow-hidden cursor-pointer hover:border-primary/50 transition-colors">
+<div class="w-full h-full wireframe-crosshatch flex items-center justify-center">
+<span class="material-symbols-outlined opacity-30" data-icon="photo_camera">photo_camera</span>
+</div>
+</div>
+<div class="aspect-square border border-on-surface/20 bg-surface-container-low overflow-hidden cursor-pointer hover:border-primary/50 transition-colors">
+<div class="w-full h-full wireframe-crosshatch flex items-center justify-center">
+<span class="material-symbols-outlined opacity-30" data-icon="photo_camera">photo_camera</span>
+</div>
+</div>
+<div class="aspect-square border border-on-surface/20 bg-surface-container-low overflow-hidden cursor-pointer hover:border-primary/50 transition-colors">
+<div class="w-full h-full wireframe-crosshatch flex items-center justify-center">
+<span class="material-symbols-outlined opacity-30" data-icon="photo_camera">photo_camera</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Information Hierarchy -->
+<div class="lg:col-span-5 flex flex-col gap-stack-md">
+<header class="flex flex-col gap-unit">
+<div class="flex items-center gap-2">
+<span class="text-secondary font-label-caps px-2 py-1 border border-secondary rounded-full text-[10px]">RARE SPECIMEN</span>
+<div class="flex items-center text-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="star">star</span>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg text-primary">Violet Void Toffee</h1>
+<p class="font-headline-sm text-headline-sm text-tertiary">3.50 Gold Sovereigns</p>
+</header>
+<div class="h-[1px] w-full bg-on-surface/10"></div>
+<div class="flex flex-col gap-stack-sm">
+<h3 class="font-label-caps text-on-surface-variant">Inventory Notes</h3>
+<p class="font-body-md text-body-lg text-on-surface leading-relaxed">
+                        A dense, chewy confection harvested from the edges of the Great Nebula. Each bite releases a controlled pulse of gravity-altering energy. The texture starts hard but yields to a velvety, space-bending richness that lingers on the palate for exactly seven minutes.
+                    </p>
+</div>
+<!-- Magical Effect Info Box (Wireframe Highlight) -->
+<div class="bg-surface-container border border-on-surface/20 p-stack-md flex flex-col gap-stack-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-2 opacity-5">
+<span class="material-symbols-outlined text-6xl" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="magic_button">magic_button</span>
+<h4 class="font-label-caps text-primary tracking-widest">Confirmed Magical Properties</h4>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Primary Effect:</span>
+<span class="font-semibold">Levitation (Level II)</span>
+</div>
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Duration:</span>
+<span class="font-semibold">15 Minutes per unit</span>
+</div>
+<div class="flex justify-between items-center text-body-md">
+<span class="text-on-surface-variant">Side Effects:</span>
+<span class="font-semibold">Sparkling pupils, humming ears</span>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-unit mt-4">
+<div class="flex gap-4">
+<button class="flex-1 h-[56px] bg-primary text-on-primary font-button-text flex items-center justify-center gap-2 hard-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#430d6e] transition-all">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+                            ADD TO INVENTORY
+                        </button>
+<button class="w-[56px] h-[56px] border-2 border-secondary text-secondary flex items-center justify-center hover:bg-secondary hover:text-white transition-all group">
+<span class="material-symbols-outlined transition-transform group-active:scale-125" data-icon="favorite">favorite</span>
+</button>
+</div>
+<p class="text-[10px] text-center font-label-caps text-on-surface-variant mt-2">Caution: Do not consume before operating a flying carpet.</p>
+</div>
+</div>
+</section>
+<!-- Secondary Detail Sections -->
+<section class="mt-stack-lg border-t border-on-surface/10 pt-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="space-y-4">
+<h5 class="font-label-caps text-primary border-b border-primary/20 pb-2">Ingredients</h5>
+<ul class="text-body-md text-on-surface-variant space-y-1">
+<li>• Star-dust extract</li>
+<li>• Caramelized moon-light</li>
+<li>• Void salt</li>
+<li>• Enchanted cane sugar</li>
+</ul>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-caps text-primary border-b border-primary/20 pb-2">Preparation</h5>
+<p class="text-body-md text-on-surface-variant italic">
+                        Cold-pressed in the basement of the Archivist's tower during a waxing crescent moon.
+                    </p>
+</div>
+<div class="space-y-4">
+<h5 class="font-label-caps text-primary border-b border-primary/20 pb-2">Security Level</h5>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error" data-icon="encrypted">encrypted</span>
+<span class="text-body-md font-semibold">Tier 3 - Apprentice Clearance Required</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Items (Bento Style) -->
+<section class="mt-stack-lg space-y-stack-md">
+<h2 class="font-headline-md text-headline-md text-primary">Related Confections</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="md:col-span-2 border border-on-surface/20 p-stack-sm flex flex-col gap-stack-sm hover:border-primary transition-all cursor-pointer">
+<div class="aspect-video bg-surface-container-high wireframe-crosshatch overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A top-down view of several glowing blue marshmallows arranged artistically on a dark slate surface. Each marshmallow emits a soft cerulean aura. The scene is shot with high contrast and shallow depth of field, maintaining a professional and magical wireframe catalog aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGiKDiaQz3e6TjWOHaGX6llnZQupg9mo012rv3ghEwegQ5hxaDeUEZKjaqnamExb1pMzlkD1MUnnzOSESEmIG3DwC1HdTG6HYy8A9X6ju6Pk9LsbV7lWX_jpbD73vbbVMlO8ilvYIGtn8tN83z2zFVuupzHYaNpDlL7uyGlpWMjwC97ujHhmQpD2DeWo8dLLAd7d8Exrjz5HHnLr0G2IB-ijSTBiKWuUQy5U-ULQneBo0Ld8atk5a6fYRHOUa8eFfTAQrbbw9PR3xT"/>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-headline-sm text-on-surface">Cloud-Walk Marshmallows</span>
+<span class="font-label-caps text-tertiary">2.00 G.S.</span>
+</div>
+</div>
+<div class="border border-on-surface/20 p-stack-sm flex flex-col gap-stack-sm hover:border-primary transition-all cursor-pointer">
+<div class="aspect-square bg-surface-container-high wireframe-crosshatch overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A detailed digital painting of a single piece of amber-colored hard candy that contains a trapped tiny lightning bolt. The lighting is dramatic, focused entirely on the candy, making it glow against a dark brown, wood-textured background. Visual style is refined magical minimalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeTis9yc0wj4VbKcZT0hPEORsYqPAMrHBFY8IXScU4Hdb14MxM02CvD3OdRwiW7_yw-ZvFQVY3qtFLR7fy4Fg2LfvS2ZCZ4t87xDxld_c9ZMUbfTOnj7NesbETMAaeGWNRjowlBqCcrWkF7GYphlnW9sLN9p37pwIql9nt5sj5WGSQiTjV_w9NEvWLLTo_qm-UGCk3JKUPxoWU8kbDBpjrKmfQN_ZaWmUDaT-htN0tirR7_zNXzoHQ5feKSoD2TH-9g9xY2gVLHrtT"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-on-surface">Bolt-in-Bottle Taffy</span>
+<span class="font-label-caps text-tertiary">1.50 G.S.</span>
+</div>
+</div>
+<div class="border border-on-surface/20 p-stack-sm flex flex-col gap-stack-sm hover:border-primary transition-all cursor-pointer">
+<div class="aspect-square bg-surface-container-high wireframe-crosshatch overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A creative macro shot of peppermint swirls that appear to be spinning in a frozen spiral of ice. The colors are cool blues and sharp whites. The composition is clean and modern, following the professional catalog design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQZ1u4776MaKAKf05y0plVVW7k8z7uqv3-kh4OFcuK4rJfhov0HDjX3_d2bEwRhVA8j6nGGsntpqe67bSfOm1LOsPidU_5TMfRF0F37zOazA2jJRQ0JZhsNCZf3UyPg6gmE2AdViFqwmOmAYMy1vLaf9V4AWlb_iovNafZUcLrH7xjw1UnS-DUUrC568FqVfu9AZE3PkjXtUKDC-Q0g5N2LGzjpB1Azs9k-FhoaoeR1FwRHUM9mIVFA8J1Ng3YO9dIOF_S4IYVRSLi"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-on-surface">Frost-Bite Swirls</span>
+<span class="font-label-caps text-tertiary">1.25 G.S.</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest w-full px-margin-desktop py-stack-md mt-stack-lg border-t border-on-surface/10">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-stack-md">
+<div class="font-headline-sm text-headline-sm text-primary">The Candy Shop Wars</div>
+<div class="flex flex-wrap justify-center gap-stack-md">
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-opacity opacity-80 hover:opacity-100" href="#">Contact Archivist</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface text-center md:text-right">
+                © 2024 The Candy Shop Wars Catalog. All Rights Reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'translateY(1px)';
+            });
+            button.addEventListener('mouseup', () => {
+                button.style.transform = '';
+            });
+        });
+
+        // Hover effect for thumbnail update (simulation)
+        const thumbnails = document.querySelectorAll('.cursor-pointer img, .wireframe-crosshatch');
+        thumbnails.forEach(thumb => {
+            thumb.parentElement.addEventListener('click', () => {
+                // In a real app, this would swap the main image
+                console.log('Thumbnail selected');
+            });
+        });
+    </script>
+</body></html>

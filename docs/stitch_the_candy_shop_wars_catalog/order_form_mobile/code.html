@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Candy Shop Wars - Order Archive</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#5f2e8a",
+                    "on-secondary-fixed": "#001f23",
+                    "on-secondary-container": "#306d75",
+                    "on-primary-container": "#cf9afd",
+                    "tertiary-container": "#593e00",
+                    "on-surface-variant": "#4c4450",
+                    "surface-tint": "#7847a4",
+                    "tertiary-fixed": "#ffdea7",
+                    "surface-dim": "#ead6cb",
+                    "secondary-container": "#b0edf6",
+                    "on-tertiary-fixed": "#271900",
+                    "on-secondary-fixed-variant": "#034f56",
+                    "on-error": "#ffffff",
+                    "surface-variant": "#f3dfd3",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#fff8f5",
+                    "surface-container-highest": "#f3dfd3",
+                    "inverse-on-surface": "#ffede4",
+                    "inverse-surface": "#3a2e27",
+                    "primary-container": "#5b2a86",
+                    "error": "#ba1a1a",
+                    "on-surface": "#241913",
+                    "outline": "#7d7481",
+                    "on-tertiary-fixed-variant": "#5e4200",
+                    "on-secondary": "#ffffff",
+                    "primary": "#430d6e",
+                    "primary-fixed-dim": "#dfb7ff",
+                    "secondary": "#29676f",
+                    "surface-container-low": "#fff1ea",
+                    "background": "#fff8f5",
+                    "primary-fixed": "#f1daff",
+                    "secondary-fixed": "#b0edf6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#3d2900",
+                    "surface-container": "#ffeade",
+                    "error-container": "#ffdad6",
+                    "outline-variant": "#cec3d2",
+                    "tertiary-fixed-dim": "#f1bf61",
+                    "on-error-container": "#93000a",
+                    "on-background": "#241913",
+                    "on-tertiary-container": "#d8a84d",
+                    "on-primary-fixed": "#2d004f",
+                    "secondary-fixed-dim": "#95d0d9",
+                    "inverse-primary": "#dfb7ff",
+                    "surface": "#fff8f5",
+                    "surface-container-high": "#f9e4d9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "stack-md": "24px",
+                    "gutter": "24px",
+                    "margin-desktop": "40px",
+                    "stack-lg": "48px",
+                    "margin-mobile": "16px",
+                    "container-max": "1200px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Cinzel"],
+                    "label-caps": ["Inter"],
+                    "button-text": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Cinzel"],
+                    "headline-sm": ["Cinzel"],
+                    "display-lg": ["Cinzel"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "button-text": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .wireframe-pattern {
+            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(36, 25, 19, 0.05) 10px, rgba(36, 25, 19, 0.05) 11px);
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(67, 13, 110, 1);
+        }
+        .border-cocoa-20 {
+            border-color: rgba(36, 25, 19, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-on-surface/20 dark:border-outline-variant docked full-width top-0 sticky z-50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary dark:text-inverse-primary">The Candy Shop Wars</h1>
+</div>
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" data-icon="shopping_cart">shopping_cart</span>
+</div>
+</div>
+</header>
+<main class="max-w-xl mx-auto px-margin-mobile pt-stack-md pb-40">
+<!-- Back Button (Transactional Suppression) -->
+<div class="mb-stack-md">
+<button class="flex items-center gap-2 text-secondary font-button-text">
+<span class="material-symbols-outlined">arrow_back</span>
+<span>Return to Catalog</span>
+</button>
+</div>
+<!-- Page Header -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Order Archive Request</h2>
+<p class="text-on-surface-variant font-body-md italic">Ensuring safe delivery of magical confections across the multiverse.</p>
+</section>
+<!-- Form Section -->
+<form class="space-y-stack-md">
+<!-- Personal Manifest -->
+<fieldset class="space-y-stack-sm">
+<legend class="font-label-caps text-label-caps text-on-surface-variant mb-2">ARCHIVE RECIPIENT</legend>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface">FULL NAME</label>
+<input class="w-full bg-surface-container-low border border-cocoa-20 focus:border-primary focus:ring-0 px-4 py-3 outline-none transition-all" placeholder="Sebastian Moore" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface">CONTACT FREQUENCY</label>
+<input class="w-full bg-surface-container-low border border-cocoa-20 focus:border-primary focus:ring-0 px-4 py-3 outline-none transition-all" placeholder="sebastian@moore.archive" type="email"/>
+</div>
+</fieldset>
+<!-- Delivery Realm -->
+<fieldset class="space-y-stack-sm">
+<legend class="font-label-caps text-label-caps text-on-surface-variant mb-2">DESTINATION REALM</legend>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface">STREET & QUADRANT</label>
+<input class="w-full bg-surface-container-low border border-cocoa-20 focus:border-primary focus:ring-0 px-4 py-3 outline-none transition-all" placeholder="123 Shadow Lane, Sector 7" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-stack-sm">
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface">POSTAL SIGIL</label>
+<input class="w-full bg-surface-container-low border border-cocoa-20 focus:border-primary focus:ring-0 px-4 py-3 outline-none transition-all" placeholder="90210-M" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface">REALM</label>
+<select class="w-full bg-surface-container-low border border-cocoa-20 focus:border-primary focus:ring-0 px-4 py-3 outline-none transition-all">
+<option>Mortal Plane</option>
+<option>The Dark Forest</option>
+<option>Floating Cities</option>
+<option>Mirror Realm</option>
+</select>
+</div>
+</div>
+</fieldset>
+<!-- Order Details (Selected Candy) -->
+<fieldset class="space-y-stack-sm pt-4">
+<legend class="font-label-caps text-label-caps text-on-surface-variant mb-2">CATALOG SELECTION</legend>
+<div class="border border-cocoa-20 p-stack-sm flex gap-stack-sm items-center bg-white">
+<div class="w-20 h-20 bg-surface-container-highest wireframe-pattern border border-cocoa-20 flex-shrink-0"></div>
+<div class="flex-grow">
+<h4 class="font-headline-sm text-headline-sm text-primary">Moon-Rise Toffee</h4>
+<div class="flex gap-2 mt-1">
+<span class="font-label-caps text-[10px] border border-secondary text-secondary px-2 py-0.5 rounded-full">LEVITATION</span>
+</div>
+</div>
+<div class="text-right">
+<p class="font-headline-sm text-tertiary">24g</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant">QTY: 1</p>
+</div>
+</div>
+</fieldset>
+<!-- Special Handling -->
+<div class="space-y-2">
+<label class="block font-label-caps text-label-caps text-on-surface">MESSAGES FOR THE ARCHIVIST</label>
+<textarea class="w-full bg-surface-container-low border border-cocoa-20 focus:border-primary focus:ring-0 px-4 py-3 outline-none transition-all" placeholder="Please wrap in silver foil to prevent accidental transmutation..." rows="3"></textarea>
+</div>
+</form>
+</main>
+<!-- Bottom Summary Section (Sticky Mobile) -->
+<section class="fixed bottom-0 left-0 w-full bg-surface-container-high border-t border-on-surface/10 p-margin-mobile pb-8 z-40">
+<div class="max-w-xl mx-auto">
+<div class="flex justify-between items-center mb-stack-sm">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">TOTAL DEBT</p>
+<p class="font-display-lg-mobile text-display-lg-mobile text-primary">34.50 <span class="text-sm font-label-caps">GOLD</span></p>
+</div>
+<div class="text-right">
+<p class="font-body-md text-secondary">Free Interdimensional Shipping</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 px-6 font-button-text text-button-text hard-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform flex justify-center items-center gap-3">
+<span>AUTHORIZE TRANSACTION</span>
+<span class="material-symbols-outlined">auto_fix_high</span>
+</button>
+<p class="text-center text-[10px] font-label-caps text-on-surface-variant mt-4">By authorizing, you accept all magical liabilities as stated in the <span class="underline">Archive Accords</span>.</p>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-lowest full-width border-t border-on-surface/10 transition-opacity opacity-80 hover:opacity-100">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto">
+<div class="mb-stack-sm md:mb-0">
+<h3 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary">The Candy Shop Wars</h3>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-4 text-on-surface-variant">
+<span class="font-body-md text-body-md">© 2024 The Candy Shop Wars Catalog. All Rights Reserved.</span>
+<div class="flex gap-stack-sm">
+<a class="hover:text-primary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for input focus
+        const inputs = document.querySelectorAll('input, select, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.querySelector('label')?.classList.add('text-primary');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.querySelector('label')?.classList.remove('</script></body></html>
