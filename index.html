@@ -1,142 +1,143 @@
 <!doctype html>
-
 <html lang="en">
-
   <head>
-
     <meta charset="UTF-8" />
-
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
-
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-
       rel="stylesheet"
-
     />
-
     <title>The Candy Shop Wars | Archive</title>
-
   </head>
-
   <body>
-
     <header class="site-header">
-
       <div class="container site-header__inner">
-
         <a href="/" class="site-logo">The Candy Shop Wars</a>
 
-
-
         <nav class="site-nav" aria-label="Main navigation">
-
           <a class="nav-link nav-link--active" href="/">Home</a>
-
           <a class="nav-link" href="/pages/favorites.html">Favorites</a>
-
-          <a class="site-nav__cart" href="/pages/order.html" aria-label="View cart">
-            <span class="material-symbols-outlined">shopping_cart</span>
+          <a class="site-nav__cart" href="/pages/order.html" aria-label="View order page">
+            <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
           </a>
-
         </nav>
 
-
-
-        <a class="site-header__cart-mobile" href="/pages/order.html" aria-label="View cart">
-
-          <span class="material-symbols-outlined">shopping_cart</span>
-
+        <a class="site-header__cart-mobile" href="/pages/order.html" aria-label="View order page">
+          <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
         </a>
-
       </div>
-
     </header>
 
-
-
     <main class="container page-main">
-
-      <section class="catalog-hero">
-
+      <section class="catalog-hero" aria-labelledby="catalog-title">
         <div class="catalog-hero__row">
-
           <div class="catalog-hero__intro">
-
             <span class="eyebrow">Inventory Archivist</span>
-
-            <h1 class="page-title">Artifact Catalog</h1>
-
+            <h1 id="catalog-title" class="page-title">Artifact Catalog</h1>
             <p class="subtitle">
-
               A comprehensive repository of supernatural confectionery. Handle with care; some entries are known to
-
               bypass standard causality.
-
             </p>
-
           </div>
-
         </div>
-
       </section>
 
-      <div class="search-box">
+      <div class="catalog-controls">
+        <div class="search-box">
+          <label class="visually-hidden" for="catalog-search">Search catalog</label>
+          <input
+            id="catalog-search"
+            class="search-input"
+            placeholder="Search magical inventory..."
+            type="search"
+          />
+          <span class="material-symbols-outlined" aria-hidden="true">search</span>
+        </div>
 
-        <input
-
-          class="search-input"
-
-          placeholder="Search magical inventory..."
-
-          type="text"
-
-          data-search-input
-
-        />
-
-        <span class="material-symbols-outlined">search</span>
-
+        <div class="form-field catalog-filter">
+          <label class="form-label" for="category-filter">Category</label>
+          <select id="category-filter" class="form-input">
+            <option value="all">All Categories</option>
+          </select>
+        </div>
       </div>
 
+      <p id="catalog-status" class="status-message" aria-live="polite"></p>
 
       <div id="product-grid" class="product-grid"></div>
-
     </main>
 
-
-
     <footer class="site-footer">
-
       <div class="container site-footer__inner">
-
         <div class="site-footer__brand">The Candy Shop Wars</div>
-
         <div class="site-footer__links">
-
           <a class="site-footer__link" href="/pages/design-documents.html">Design Document</a>
-
         </div>
- 
+        <p class="text-muted">&copy; 2026 The Candy Shop Wars Catalog. All Rights Reserved.</p>
       </div>
-      
-      <p class="text-muted">&copy; 2026 The Candy Shop Wars Catalog. All Rights Reserved.</p>
-
     </footer>
 
+    <div id="product-modal" class="product-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-name">
+      <div class="product-modal__backdrop"></div>
+      <div class="product-modal__panel">
+        <button type="button" class="product-modal__close" aria-label="Close product details">
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
 
+        <div class="product-modal__gallery wireframe-crosshatch">
+          <img id="modal-image" src="" alt="" />
+        </div>
+
+        <div class="product-modal__content">
+          <span id="modal-category" class="chip"></span>
+          <h2 id="modal-name" class="product-detail__name"></h2>
+          <p id="modal-price" class="product-detail__price"></p>
+
+          <div class="divider"></div>
+
+          <h3 class="label-caps text-muted">Description</h3>
+          <p id="modal-description" class="subtitle"></p>
+
+          <div class="info-box">
+            <h3 class="info-box__title label-caps">Magical Properties</h3>
+            <div class="info-row">
+              <span class="text-muted">Primary Effect:</span>
+              <span id="modal-effect-primary"></span>
+            </div>
+            <div class="info-row">
+              <span class="text-muted">Duration:</span>
+              <span id="modal-effect-duration"></span>
+            </div>
+            <div class="info-row">
+              <span class="text-muted">Side Effects:</span>
+              <span id="modal-effect-side-effects"></span>
+            </div>
+          </div>
+
+          <div class="product-actions">
+            <a id="modal-order" class="btn btn--primary" href="/pages/order.html">
+              <span class="material-symbols-outlined" aria-hidden="true">shopping_basket</span>
+              Order Now
+            </a>
+            <button
+              id="modal-favorite"
+              type="button"
+              class="btn btn--icon"
+              aria-label="Add to favorites"
+              aria-pressed="false"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+            </button>
+          </div>
+
+          <p id="modal-favorite-status" class="status-message" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="/src/JS/catalog.js"></script>
-
   </body>
-
 </html>
-
-

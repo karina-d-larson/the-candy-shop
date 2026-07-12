@@ -32,18 +32,6 @@ function srcRootAssetsPlugin() {
   };
 }
 
-/*
-  Vite Configuration
-  ------------------
-  This project has more than one HTML page:
-  - index.html is the home page.
-  - pages/design-documents.html is linked from the footer.
-  - pages/order.html, pages/favorites.html, and pages/product.html
-    are planned storefront views.
-
-  By listing each HTML file here, Vite includes all pages when we run:
-  npm run build
-*/
 export default defineConfig({
   publicDir: resolve(__dirname, "src/public"),
   plugins: [srcRootAssetsPlugin()],
@@ -54,7 +42,6 @@ export default defineConfig({
         designDocuments: resolve(__dirname, "pages/design-documents.html"),
         order: resolve(__dirname, "pages/order.html"),
         favorites: resolve(__dirname, "pages/favorites.html"),
-        product: resolve(__dirname, "pages/product.html"),
       },
     },
   },

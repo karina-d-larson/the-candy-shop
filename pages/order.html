@@ -17,40 +17,47 @@
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/pages/favorites.html">Favorites</a>
       </nav>
-      <a class="site-header__cart-mobile" href="/pages/order.html" aria-label="View cart">
-        <span class="material-symbols-outlined">shopping_cart</span>
+      <a class="site-header__cart-mobile" href="/pages/order.html" aria-label="View order page">
+        <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
       </a>
     </div>
   </header>
 
   <main class="container page-main">
-    <div class="page-intro">
-      <h2 class="section-title">Finalize Order Archive</h2>
+    <header class="page-intro">
+      <h1 class="page-title">Finalize Order Archive</h1>
       <p class="text-muted">Documenting the acquisition of magical artifacts.</p>
-    </div>
+    </header>
+
+    <p id="order-status" class="status-message" aria-live="polite"></p>
+    <p id="order-success" class="status-message status-message--success" role="status" aria-live="polite"></p>
 
     <div class="order-layout">
-      <section>
-        <form id="order-form" class="order-form">
+      <section aria-labelledby="order-form-title">
+        <h2 id="order-form-title" class="visually-hidden">Order form</h2>
+        <form id="order-form" class="order-form" novalidate>
           <div class="form-row">
             <div class="form-field">
               <label class="form-label" for="order-name">Full Name</label>
-              <input class="form-input" id="order-name" placeholder="Sebastian Moore" type="text" required />
+              <input class="form-input" id="order-name" name="name" placeholder="Sebastian Moore" type="text" autocomplete="name" required />
+              <span class="form-error" id="order-name-error"></span>
             </div>
             <div class="form-field">
               <label class="form-label" for="order-email">Email Address</label>
-              <input class="form-input" id="order-email" placeholder="archivist@fountain.com" type="email" required />
+              <input class="form-input" id="order-email" name="email" placeholder="archivist@fountain.com" type="email" autocomplete="email" required />
+              <span class="form-error" id="order-email-error"></span>
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-field">
               <label class="form-label" for="order-phone">Phone Number</label>
-              <input class="form-input" id="order-phone" placeholder="+1 (555) 012-3456" type="tel" />
+              <input class="form-input" id="order-phone" name="phone" placeholder="+1 (555) 012-3456" type="tel" autocomplete="tel" />
+              <span class="form-error" id="order-phone-error"></span>
             </div>
             <div class="form-field">
               <label class="form-label" for="order-method">Acquisition Method</label>
-              <select class="form-input" id="order-method">
+              <select class="form-input" id="order-method" name="method">
                 <option>Courier Falcon</option>
                 <option>Invisible Drop-off</option>
                 <option>Standard Postal</option>
@@ -60,12 +67,13 @@
 
           <div class="form-field">
             <label class="form-label" for="order-address">Delivery Coordinates (Address)</label>
-            <input class="form-input" id="order-address" placeholder="123 Fountain Lane, West Haven, CT" type="text" required />
+            <input class="form-input" id="order-address" name="address" placeholder="123 Fountain Lane, West Haven, CT" type="text" autocomplete="street-address" required />
+            <span class="form-error" id="order-address-error"></span>
           </div>
 
           <div class="form-field">
-            <label class="form-label" for="order-notes">Special Handling Instructions</label>
-            <textarea class="form-input" id="order-notes" placeholder="Mention any magical sensitivities or containment requirements here..." rows="4"></textarea>
+            <label class="form-label" for="order-notes">Special Handling Instructions (optional)</label>
+            <textarea class="form-input" id="order-notes" name="notes" placeholder="Mention any magical sensitivities or containment requirements here..." rows="4"></textarea>
           </div>
 
           <div>
@@ -73,19 +81,19 @@
               AUTHENTICATE &amp; SUBMIT ORDER
             </button>
             <p class="form-note label-caps">
-              <span class="material-symbols-outlined">lock</span>
+              <span class="material-symbols-outlined" aria-hidden="true">lock</span>
               SECURE ENCRYPTED ARCHIVE
             </p>
           </div>
         </form>
       </section>
 
-      <aside class="order-summary">
-        <h3 class="order-summary__title">Manifest Summary</h3>
+      <aside class="order-summary" aria-labelledby="order-summary-title">
+        <h2 id="order-summary-title" class="order-summary__title">Manifest Summary</h2>
         <div id="order-summary-items" class="order-summary__items"></div>
 
         <div class="trust-badge">
-          <span class="material-symbols-outlined">verified_user</span>
+          <span class="material-symbols-outlined" aria-hidden="true">verified_user</span>
           <div>
             <p class="trust-badge__title label-caps">AUTHENTICITY GUARANTEED</p>
             <p class="trust-badge__text">Archived at The Fountain, 2026</p>
@@ -105,4 +113,3 @@
   <script type="module" src="/src/JS/order.js"></script>
 </body>
 </html>
-
