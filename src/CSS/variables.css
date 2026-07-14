@@ -47,8 +47,8 @@
   --radius-md: 8px;
   --radius-pill: 999px;
 
-  --shadow-hard: 4px 4px 0 0 var(--color-primary-dark);
-  --shadow-hard-hover: 2px 2px 0 0 var(--color-primary-dark);
+  --shadow-hard: 4px 4px 0 0 var(--color-on-tertiary-container);
+  --shadow-hard-hover: 2px 2px 0 0 var(--color-on-tertiary-container);
 
   --transition: 0.2s ease;
 }

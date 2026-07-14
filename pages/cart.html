@@ -7,29 +7,29 @@
   <meta name="theme-color" content="#5B2A86" />
   <meta
     name="description"
-    content="View your saved magical candies and enchanted items from The Candy Shop Wars Catalog and return to the products you want most."
+    content="Review your selected magical items, adjust quantities, and prepare to check out from The Candy Shop Wars Catalog."
   />
-  <!-- TODO: Add <link rel="canonical"> and og:url once the Netlify production domain is known (path: /pages/favorites.html). -->
+  <!-- TODO: Add <link rel="canonical"> and og:url once the Netlify production domain is known (path: /pages/cart.html). -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="The Candy Shop Wars Catalog" />
-  <meta property="og:title" content="Favorites | The Candy Shop Wars Catalog" />
+  <meta property="og:title" content="Cart | The Candy Shop Wars Catalog" />
   <meta
     property="og:description"
-    content="View your saved magical candies and enchanted items from The Candy Shop Wars Catalog and return to the products you want most."
+    content="Review your selected magical items, adjust quantities, and prepare to check out from The Candy Shop Wars Catalog."
   />
   <!-- TODO: Add og:image and og:image:alt with an absolute production URL to a ~1200×630 branded social preview image. -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Favorites | The Candy Shop Wars Catalog" />
+  <meta name="twitter:title" content="Cart | The Candy Shop Wars Catalog" />
   <meta
     name="twitter:description"
-    content="View your saved magical candies and enchanted items from The Candy Shop Wars Catalog and return to the products you want most."
+    content="Review your selected magical items, adjust quantities, and prepare to check out from The Candy Shop Wars Catalog."
   />
   <!-- TODO: Add twitter:image and twitter:image:alt with an absolute production URL to the social preview image. -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  <title>Favorites | The Candy Shop Wars Catalog</title>
+  <title>Cart | The Candy Shop Wars Catalog</title>
 </head>
 <body>
   <header class="site-header">
@@ -54,44 +54,44 @@
 
       <nav id="site-nav" class="site-nav" aria-label="Main navigation">
         <a class="nav-link" href="/">Home</a>
-        <a class="nav-link nav-link--active" href="/pages/favorites.html">Favorites</a>
-        <a class="nav-link" href="/pages/cart.html">Cart</a>
+        <a class="nav-link" href="/pages/favorites.html">Favorites</a>
+        <a class="nav-link nav-link--active" href="/pages/cart.html">Cart</a>
       </nav>
     </div>
   </header>
 
   <main class="container page-main">
-    <header class="page-header--accent">
-      <h1 class="page-title">Vault of Desires</h1>
-      <p class="subtitle">Your curated collection of supernatural confections.</p>
+    <header class="page-intro">
+      <h1 class="page-title">Acquisition Cart</h1>
+      <p class="text-muted">
+        Each magical item carries its own cost. Review your choices carefully before checkout.
+      </p>
     </header>
 
-    <div class="search-box favorites-search">
-      <label class="visually-hidden" for="favorites-search">Search favorites</label>
-      <input id="favorites-search" class="search-input" placeholder="Search the archive..." type="search" />
-      <span class="material-symbols-outlined" aria-hidden="true">search</span>
-    </div>
+    <p id="cart-status" class="status-message" aria-live="polite"></p>
 
-    <p id="favorites-status" class="status-message" aria-live="polite"></p>
+    <section id="cart-items" class="cart-list" aria-label="Items in cart"></section>
 
-    <section id="favorites-grid" class="favorites-grid" aria-label="Saved favorites"></section>
-
-    <section id="empty-state-canvas" class="empty-state">
+    <section id="cart-empty" class="empty-state" aria-label="Empty cart">
       <div class="empty-state__icon-wrap">
         <div class="empty-state__circle">
-          <span class="material-symbols-outlined" aria-hidden="true">auto_fix_off</span>
-        </div>
-        <div class="empty-state__star">
-          <span class="material-symbols-outlined" aria-hidden="true">star</span>
+          <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
         </div>
       </div>
-      <h2 class="section-title">Your Archive is Empty</h2>
-      <p class="subtitle">The spirits suggest you haven't discovered your magical match yet. Explore the shop to find your destiny.</p>
+      <h2 class="section-title">Your Cart is Empty</h2>
+      <p class="subtitle">Explore the catalog and add magical artifacts to begin an order.</p>
       <a class="btn btn--primary" href="/">
         <span class="material-symbols-outlined" aria-hidden="true">explore</span>
-        Start Exploring
+        Browse Catalog
       </a>
     </section>
+
+    <div id="cart-actions" class="cart-actions is-hidden">
+      <button type="button" id="clear-cart" class="btn btn--text">Clear Cart</button>
+      <a id="checkout-cart" class="btn btn--primary" href="/pages/order.html?checkout=cart">
+        Proceed to Checkout
+      </a>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -101,6 +101,6 @@
     </div>
   </footer>
 
-  <script type="module" src="/src/JS/favorites.js"></script>
+  <script type="module" src="/src/JS/cart.js"></script>
 </body>
 </html>

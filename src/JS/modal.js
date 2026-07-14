@@ -1,11 +1,14 @@
-import { getFavorites, saveFavorites } from "./storage.js";
+import { getFavorites, saveFavorites, addToCart } from "./storage.js";
 import { formatItemPrice, getItemImagePath, getUrlParameter } from "./utils.js";
+import { updateCartCount } from "./cart-ui.js";
 
 const PLACEHOLDER = "/images/placeholder.svg";
 
 let modal = null;
 let lastFocusedElement = null;
 let favoriteStatusEl = null;
+let cartStatusEl = null;
+let currentItem = null;
 let onFavoriteChange = null;
 
 function getFocusableElements(container) {
@@ -32,8 +35,16 @@ function setFavoriteStatus(message) {
   }
 }
 
+function setCartStatus(message) {
+  if (cartStatusEl) {
+    cartStatusEl.textContent = message;
+  }
+}
+
 function populateModal(item) {
   if (!modal) return;
+
+  currentItem = item;
 
   modal.querySelector("#modal-image").src = getItemImagePath(item.image);
   modal.querySelector("#modal-image").alt = item.name;
@@ -55,9 +66,7 @@ function populateModal(item) {
   favoriteButton.setAttribute("aria-pressed", String(isFavorite));
   favoriteButton.classList.toggle("is-active", isFavorite);
   favoriteButton.dataset.itemId = item.id;
-
-  const orderButton = modal.querySelector("#modal-order");
-  orderButton.href = `/pages/order.html?item=${encodeURIComponent(item.id)}`;
+  favoriteButton.dataset.itemName = item.name;
 }
 
 function handleFavoriteClick(event) {
@@ -75,9 +84,21 @@ function handleFavoriteClick(event) {
   const isFavorite = next.includes(itemId);
   button.setAttribute("aria-pressed", String(isFavorite));
   button.classList.toggle("is-active", isFavorite);
-  setFavoriteStatus(isFavorite ? `${button.dataset.itemName} added to favorites.` : `${button.dataset.itemName} removed from favorites.`);
+  setFavoriteStatus(
+    isFavorite
+      ? `${button.dataset.itemName} added to favorites.`
+      : `${button.dataset.itemName} removed from favorites.`,
+  );
 
   if (onFavoriteChange) onFavoriteChange();
+}
+
+function handleAddToCart() {
+  if (!currentItem) return;
+
+  addToCart(currentItem.id);
+  updateCartCount();
+  setCartStatus(`${currentItem.name} added to cart.`);
 }
 
 function handleKeyDown(event) {
@@ -106,6 +127,7 @@ function handleKeyDown(event) {
 export function initModal(options = {}) {
   modal = document.querySelector("#product-modal");
   favoriteStatusEl = document.querySelector("#modal-favorite-status");
+  cartStatusEl = document.querySelector("#modal-cart-status");
   onFavoriteChange = options.onFavoriteChange;
 
   if (!modal) return;
@@ -113,6 +135,7 @@ export function initModal(options = {}) {
   modal.querySelector(".product-modal__backdrop")?.addEventListener("click", closeModal);
   modal.querySelector(".product-modal__close")?.addEventListener("click", closeModal);
   modal.querySelector("#modal-favorite")?.addEventListener("click", handleFavoriteClick);
+  modal.querySelector("#modal-add-cart")?.addEventListener("click", handleAddToCart);
   modal.addEventListener("keydown", handleKeyDown);
 }
 
@@ -121,8 +144,9 @@ export function openModal(item, triggerElement = null) {
 
   lastFocusedElement = triggerElement || document.activeElement;
   populateModal(item);
+  setCartStatus("");
+  setFavoriteStatus("");
 
-  modal.querySelector("#modal-favorite").dataset.itemName = item.name;
   modal.hidden = false;
   document.body.classList.add("modal-open");
   updateDetailUrl(item.id);
@@ -140,6 +164,8 @@ export function closeModal() {
   document.body.classList.remove("modal-open");
   updateDetailUrl(null);
   setFavoriteStatus("");
+  setCartStatus("");
+  currentItem = null;
 
   window.setTimeout(() => {
     modal.hidden = true;

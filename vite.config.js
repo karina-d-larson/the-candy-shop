@@ -42,6 +42,7 @@ export default defineConfig({
         designDocuments: resolve(__dirname, "pages/design-documents.html"),
         order: resolve(__dirname, "pages/order.html"),
         favorites: resolve(__dirname, "pages/favorites.html"),
+        cart: resolve(__dirname, "pages/cart.html"),
       },
     },
   },

@@ -3,23 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Karina Larson" />
+  <meta name="theme-color" content="#5B2A86" />
+  <meta
+    name="description"
+    content="Review your magical items and complete your order through the accessible checkout form for The Candy Shop Wars Catalog."
+  />
+  <!-- TODO: Add <link rel="canonical"> and og:url once the Netlify production domain is known (path: /pages/order.html). -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Candy Shop Wars Catalog" />
+  <meta property="og:title" content="Checkout | The Candy Shop Wars Catalog" />
+  <meta
+    property="og:description"
+    content="Review your magical items and complete your order through the accessible checkout form for The Candy Shop Wars Catalog."
+  />
+  <!-- TODO: Add og:image and og:image:alt with an absolute production URL to a ~1200×630 branded social preview image. -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Checkout | The Candy Shop Wars Catalog" />
+  <meta
+    name="twitter:description"
+    content="Review your magical items and complete your order through the accessible checkout form for The Candy Shop Wars Catalog."
+  />
+  <!-- TODO: Add twitter:image and twitter:image:alt with an absolute production URL to the social preview image. -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-  <title>Order | The Candy Shop Wars Catalog</title>
+  <title>Checkout | The Candy Shop Wars Catalog</title>
 </head>
 <body>
   <header class="site-header">
     <div class="container site-header__inner">
       <a href="/" class="site-logo">The Candy Shop Wars</a>
-      <nav class="site-nav" aria-label="Main navigation">
+
+      <div class="site-header__controls">
+        <a class="cart-link" href="/pages/cart.html" data-cart-link aria-label="Cart, 0 items">
+          <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+          <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+        </a>
+        <button
+          type="button"
+          class="nav-toggle"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+        </button>
+      </div>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main navigation">
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/pages/favorites.html">Favorites</a>
+        <a class="nav-link" href="/pages/cart.html">Cart</a>
       </nav>
-      <a class="site-header__cart-mobile" href="/pages/order.html" aria-label="View order page">
-        <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
-      </a>
     </div>
   </header>
 
@@ -27,10 +64,14 @@
     <header class="page-intro">
       <h1 class="page-title">Finalize Order Archive</h1>
       <p class="text-muted">Documenting the acquisition of magical artifacts.</p>
+      <p class="text-muted">
+        Orders completed so far: <strong id="order-count-display">0</strong>
+      </p>
     </header>
 
     <p id="order-status" class="status-message" aria-live="polite"></p>
     <p id="order-success" class="status-message status-message--success" role="status" aria-live="polite"></p>
+    <div id="order-confirmation" class="order-confirmation" aria-live="polite"></div>
 
     <div class="order-layout">
       <section aria-labelledby="order-form-title">
@@ -90,6 +131,9 @@
 
       <aside class="order-summary" aria-labelledby="order-summary-title">
         <h2 id="order-summary-title" class="order-summary__title">Manifest Summary</h2>
+        <p class="text-muted order-summary__note">
+          Each magical item carries its own cost. Review your choices carefully before checkout.
+        </p>
         <div id="order-summary-items" class="order-summary__items"></div>
 
         <div class="trust-badge">

@@ -2,32 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Karina Larson" />
+    <meta name="theme-color" content="#5B2A86" />
+    <meta
+      name="description"
+      content="Browse magical candies and enchanted items from The Candy Shop Wars Catalog. Explore unique effects, save favorites, and build your cart."
+    />
+    <!-- TODO: Add <link rel="canonical"> and og:url once the Netlify production domain is known. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The Candy Shop Wars Catalog" />
+    <meta property="og:title" content="The Candy Shop Wars Catalog" />
+    <meta
+      property="og:description"
+      content="Browse magical candies and enchanted items from The Candy Shop Wars Catalog. Explore unique effects, save favorites, and build your cart."
+    />
+    <!-- TODO: Add og:image and og:image:alt with an absolute production URL to a ~1200×630 branded social preview image. -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Candy Shop Wars Catalog" />
+    <meta
+      name="twitter:description"
+      content="Browse magical candies and enchanted items from The Candy Shop Wars Catalog. Explore unique effects, save favorites, and build your cart."
+    />
+    <!-- TODO: Add twitter:image and twitter:image:alt with an absolute production URL to the social preview image. -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <title>The Candy Shop Wars | Archive</title>
+    <title>The Candy Shop Wars Catalog</title>
   </head>
   <body>
     <header class="site-header">
       <div class="container site-header__inner">
         <a href="/" class="site-logo">The Candy Shop Wars</a>
 
-        <nav class="site-nav" aria-label="Main navigation">
+        <div class="site-header__controls">
+          <a class="cart-link" href="/pages/cart.html" data-cart-link aria-label="Cart, 0 items">
+            <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+            <span class="cart-count" data-cart-count aria-hidden="true">0</span>
+          </a>
+          <button
+            type="button"
+            class="nav-toggle"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="site-nav"
+          >
+            <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+          </button>
+        </div>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main navigation">
           <a class="nav-link nav-link--active" href="/">Home</a>
           <a class="nav-link" href="/pages/favorites.html">Favorites</a>
-          <a class="site-nav__cart" href="/pages/order.html" aria-label="View order page">
-            <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
-          </a>
+          <a class="nav-link" href="/pages/cart.html">Cart</a>
         </nav>
-
-        <a class="site-header__cart-mobile" href="/pages/order.html" aria-label="View order page">
-          <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
-        </a>
       </div>
     </header>
 
@@ -118,10 +150,11 @@
           </div>
 
           <div class="product-actions">
-            <a id="modal-order" class="btn btn--primary" href="/pages/order.html">
-              <span class="material-symbols-outlined" aria-hidden="true">shopping_basket</span>
-              Order Now
-            </a>
+            <button type="button" id="modal-add-cart" class="btn btn--primary">
+              <span class="material-symbols-outlined" aria-hidden="true">add_shopping_cart</span>
+              Add to Cart
+            </button>
+            <a id="modal-view-cart" class="btn btn--text" href="/pages/cart.html">View Cart</a>
             <button
               id="modal-favorite"
               type="button"
@@ -133,6 +166,7 @@
             </button>
           </div>
 
+          <p id="modal-cart-status" class="status-message" aria-live="polite"></p>
           <p id="modal-favorite-status" class="status-message" aria-live="polite"></p>
         </div>
       </div>

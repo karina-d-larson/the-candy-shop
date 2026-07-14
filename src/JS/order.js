@@ -1,13 +1,23 @@
 import "../CSS/candy-shop.css";
 import { loadItems } from "./data.js";
-import { incrementOrderCount } from "./storage.js";
+import {
+  clearCart,
+  getCart,
+  getCartItemCount,
+  getOrderCount,
+  incrementOrderCount,
+} from "./storage.js";
 import { getUrlParameter } from "./utils.js";
 import { renderOrderSummaryItem } from "./render.js";
+import { updateCartCount } from "./cart-ui.js";
+import { initNavigation } from "./navigation.js";
 
 const summaryContainer = document.querySelector("#order-summary-items");
 const form = document.querySelector("#order-form");
 const statusRegion = document.querySelector("#order-status");
 const successRegion = document.querySelector("#order-success");
+const confirmationRegion = document.querySelector("#order-confirmation");
+const orderCountEl = document.querySelector("#order-count-display");
 
 const fields = {
   name: document.querySelector("#order-name"),
@@ -90,50 +100,103 @@ function bindFieldValidation() {
   });
 }
 
-function renderSummary(items) {
+function renderSummary(entries) {
   if (!summaryContainer) return;
-  summaryContainer.innerHTML = items.map((item) => renderOrderSummaryItem(item)).join("");
+  summaryContainer.innerHTML = entries
+    .map(({ item, quantity }) => renderOrderSummaryItem(item, quantity))
+    .join("");
+}
+
+function updateOrderCountDisplay() {
+  if (orderCountEl) {
+    orderCountEl.textContent = String(getOrderCount());
+  }
+}
+
+function resolveCartEntries(catalogItems) {
+  return getCart()
+    .map((entry) => {
+      const item = catalogItems.find((product) => product.id === entry.id);
+      if (!item) return null;
+      return { item, quantity: entry.quantity };
+    })
+    .filter(Boolean);
 }
 
 async function initOrder() {
+  initNavigation();
+  updateCartCount();
+  updateOrderCountDisplay();
   setStatus("Loading order details…");
 
   try {
-    const items = await loadItems();
-    const itemId = getUrlParameter("item");
-    const selected = itemId ? items.filter((item) => item.id === itemId) : [];
+    const catalogItems = await loadItems();
+    const checkoutParam = getUrlParameter("checkout");
+    const cartEntries = resolveCartEntries(catalogItems);
 
-    if (itemId && selected.length === 0) {
-      setStatus("The selected item could not be found. Choose an item from the catalog.");
-      summaryContainer.innerHTML = `<p class="text-error">Invalid item ID in URL.</p>`;
+    if (cartEntries.length === 0) {
+      summaryContainer.innerHTML = `
+        <p class="text-muted">Your cart is empty. Add items from the catalog, then return to checkout.</p>
+        <p><a class="btn btn--primary" href="/">Browse catalog</a></p>
+      `;
+      setStatus("Cart is empty. Add items before submitting an order.");
+      if (form) {
+        form.querySelector('[type="submit"]')?.setAttribute("disabled", "true");
+      }
+      bindFieldValidation();
       return;
     }
 
-    if (selected.length) {
-      renderSummary(selected);
-      setStatus(`Ordering: ${selected[0].name}`);
-    } else {
-      summaryContainer.innerHTML = `<p class="text-muted">No item selected. Open a product and choose Order Now.</p>`;
-      setStatus("No item selected. Choose a product from the catalog first.");
-    }
+    renderSummary(cartEntries);
+
+    const totalQty = getCartItemCount();
+    const checkoutNote =
+      checkoutParam === "cart" ? "Checkout from cart. " : "";
+    setStatus(
+      `${checkoutNote}Reviewing ${cartEntries.length} item type${cartEntries.length === 1 ? "" : "s"} (${totalQty} total) before submission.`,
+    );
 
     bindFieldValidation();
 
     form?.addEventListener("submit", (event) => {
       event.preventDefault();
       if (successRegion) successRegion.textContent = "";
+      if (confirmationRegion) confirmationRegion.innerHTML = "";
+
+      if (getCart().length === 0) {
+        setStatus("Your cart is empty. Add items before submitting.");
+        return;
+      }
 
       if (!validateForm()) {
         setStatus("Please fix the highlighted fields before submitting.");
         return;
       }
 
+      const submittedItems = resolveCartEntries(catalogItems);
       const orderNumber = incrementOrderCount();
+      clearCart();
+      updateCartCount();
+      updateOrderCountDisplay();
+
       if (successRegion) {
         successRegion.textContent = `Order #${orderNumber} archived successfully. The archivist will be in touch.`;
       }
-      setStatus("Order submitted successfully.");
+
+      if (confirmationRegion) {
+        confirmationRegion.innerHTML = `
+          <h2 class="section-title">Order Confirmation</h2>
+          <p class="text-muted">You ordered the following artifacts:</p>
+          ${submittedItems
+            .map(({ item, quantity }) => renderOrderSummaryItem(item, quantity))
+            .join("")}
+        `;
+      }
+
+      summaryContainer.innerHTML = `<p class="text-muted">Cart cleared after successful submission.</p>`;
+      setStatus("Order submitted successfully. Cart has been cleared.");
       form.reset();
+      form.querySelector('[type="submit"]')?.setAttribute("disabled", "true");
     });
   } catch (error) {
     setStatus("Unable to load order details. Please refresh and try again.");

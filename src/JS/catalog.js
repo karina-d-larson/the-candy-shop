@@ -2,6 +2,8 @@ import "../CSS/candy-shop.css";
 import { loadItems } from "./data.js";
 import { renderItemCards } from "./render.js";
 import { initModal, openModal, openModalFromUrl } from "./modal.js";
+import { updateCartCount } from "./cart-ui.js";
+import { initNavigation } from "./navigation.js";
 
 const grid = document.querySelector("#product-grid");
 const searchInput = document.querySelector("#catalog-search");
@@ -81,6 +83,8 @@ function setupFilters() {
 async function initCatalog() {
   if (!grid) return;
 
+  initNavigation();
+  updateCartCount();
   setStatus("Loading catalog…");
   grid.innerHTML = "";
 

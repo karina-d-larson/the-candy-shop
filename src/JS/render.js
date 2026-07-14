@@ -61,7 +61,34 @@ export function renderFavoriteCard(item) {
   `;
 }
 
-export function renderOrderSummaryItem(item) {
+export function renderCartItem(item, quantity) {
+  return `
+    <article class="cart-item" data-item-id="${item.id}">
+      <div class="cart-item__image-wrap wireframe-crosshatch">
+        <img src="${getItemImagePath(item.image)}" alt="${item.name}" ${imageOnErrorAttr()} />
+      </div>
+      <div class="cart-item__body">
+        <div class="cart-item__header">
+          <h2 class="cart-item__title">${item.name}</h2>
+          <span class="chip">${item.category}</span>
+        </div>
+        <p class="cart-item__cost"><span class="label-caps text-muted">Cost</span> ${formatItemPrice(item.price)}</p>
+        <div class="cart-item__controls">
+          <div class="qty-control" role="group" aria-label="Quantity for ${item.name}">
+            <button type="button" class="qty-control__btn" data-cart-action="decrease" data-item-id="${item.id}" aria-label="Decrease quantity of ${item.name}">−</button>
+            <span class="qty-control__value" aria-live="polite">${quantity}</span>
+            <button type="button" class="qty-control__btn" data-cart-action="increase" data-item-id="${item.id}" aria-label="Increase quantity of ${item.name}">+</button>
+          </div>
+          <button type="button" class="btn btn--text" data-cart-action="remove" data-item-id="${item.id}" aria-label="Remove ${item.name} from cart">
+            Remove
+          </button>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+export function renderOrderSummaryItem(item, quantity = 1) {
   return `
     <div class="summary-item">
       <div class="summary-item__thumb wireframe-crosshatch">
@@ -73,6 +100,7 @@ export function renderOrderSummaryItem(item) {
           <span>${formatItemPrice(item.price)}</span>
         </div>
         <span class="summary-item__tag">${item.category}</span>
+        <p class="summary-item__qty">Quantity: ${quantity}</p>
       </div>
     </div>
   `;

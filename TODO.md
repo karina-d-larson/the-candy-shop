@@ -678,6 +678,58 @@ Before submission.
 
 ---
 
+## Phase 7 — Multi-item Cart & Mobile Navigation
+
+### 7.1 Cart storage helpers
+
+- [x] **Task:** Cart storage helpers in `storage.js`
+- **Priority:** Critical
+- **Files Affected:** `src/JS/storage.js`
+- **Definition of Done:** `getCart`, `saveCart`, `addToCart`, `removeFromCart`, `updateCartQuantity`, `clearCart`, `getCartItemCount` store IDs + quantities only.
+
+### 7.2 Cart page
+
+- [x] **Task:** Cart page with quantity controls
+- **Priority:** Critical
+- **Files Affected:** `pages/cart.html`, `src/JS/cart.js`, `src/JS/render.js`, `vite.config.js`
+- **Definition of Done:** View cart, change quantities, remove items, clear cart, empty state, proceed to checkout.
+
+### 7.3 Modal Add to Cart
+
+- [x] **Task:** Replace Order Now with Add to Cart + View Cart
+- **Priority:** Critical
+- **Files Affected:** `index.html`, `src/JS/modal.js`
+- **Definition of Done:** Adding announces via `aria-live`; header count updates; no `alert()`.
+
+### 7.4 Checkout from full cart
+
+- [x] **Task:** Order page loads full cart
+- **Priority:** Critical
+- **Files Affected:** `pages/order.html`, `src/JS/order.js`
+- **Definition of Done:** Shows all cart items with quantities; success clears cart and increments order count once; invalid submit leaves cart intact.
+
+### 7.5 Header cart indicator
+
+- [x] **Task:** Accessible cart count in header
+- **Priority:** High
+- **Files Affected:** `index.html`, `pages/*.html`, `src/JS/cart-ui.js`
+- **Definition of Done:** Count = total quantity; label like “Cart, 3 items”; updates on all pages.
+
+### 7.6 Accessible mobile navigation
+
+- [x] **Task:** Mobile hamburger navigation menu
+- **Priority:** High
+- **Files Affected:** `src/JS/navigation.js`, `src/CSS/layout.css`, shared headers
+- **Definition of Done:** Toggle button with `aria-expanded`/`aria-controls`; closes on Escape, link click, and desktop resize; desktop keeps inline nav.
+
+### 7.7 Manual verification — cart & nav
+
+- [ ] **Task:** Manual browser verification of cart and mobile nav
+- **Priority:** High
+- **Definition of Done:** Cart persistence, quantity, checkout clear, and mobile menu behaviors confirmed in browser.
+
+---
+
 ## Assignment Requirements Checklist
 
 Use this before submission.
@@ -719,6 +771,8 @@ Use this before submission.
 - [ ] **Favorites page**
 - [ ] **Desktop centered modal**
 - [ ] **Mobile full-screen modal**
+- [ ] **Multi-item shopping cart**
+- [ ] **Accessible mobile navigation menu**
 
 ### Pre-submit smoke test
 

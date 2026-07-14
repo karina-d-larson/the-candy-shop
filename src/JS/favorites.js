@@ -2,6 +2,8 @@ import "../CSS/candy-shop.css";
 import { loadItems } from "./data.js";
 import { getFavorites, saveFavorites } from "./storage.js";
 import { renderFavoriteCard } from "./render.js";
+import { updateCartCount } from "./cart-ui.js";
+import { initNavigation } from "./navigation.js";
 
 const grid = document.querySelector("#favorites-grid");
 const emptyState = document.querySelector("#empty-state-canvas");
@@ -76,6 +78,8 @@ function setupSearch() {
 }
 
 async function initFavorites() {
+  initNavigation();
+  updateCartCount();
   setStatus("Loading favorites…");
 
   try {
