@@ -57,9 +57,36 @@ function populateModal(item) {
   modal.querySelector("#modal-category").textContent = item.category;
   modal.querySelector("#modal-price").textContent = formatItemPrice(item.price);
   modal.querySelector("#modal-description").textContent = item.description;
-  modal.querySelector("#modal-effect-primary").textContent = item.magicalEffect.primary;
-  modal.querySelector("#modal-effect-duration").textContent = item.magicalEffect.duration;
-  modal.querySelector("#modal-effect-side-effects").textContent = item.magicalEffect.sideEffects;
+
+  const effectsBox = modal.querySelector("#modal-effects");
+  const variantsSection = modal.querySelector("#modal-variants");
+  const variantsList = modal.querySelector("#modal-variants-list");
+  const hasVariants = Array.isArray(item.variants) && item.variants.length > 0;
+
+  if (hasVariants) {
+    variantsSection.hidden = false;
+    variantsList.innerHTML = item.variants
+      .map(
+        (variant) =>
+          `<li><strong>${variant.name}</strong> — ${variant.effect}</li>`,
+      )
+      .join("");
+  } else {
+    variantsSection.hidden = true;
+    variantsList.innerHTML = "";
+  }
+
+  if (item.magicalEffect) {
+    effectsBox.hidden = false;
+    modal.querySelector("#modal-effect-primary").textContent = item.magicalEffect.primary;
+    modal.querySelector("#modal-effect-duration").textContent = item.magicalEffect.duration;
+    modal.querySelector("#modal-effect-side-effects").textContent = item.magicalEffect.sideEffects;
+  } else {
+    effectsBox.hidden = true;
+    modal.querySelector("#modal-effect-primary").textContent = "";
+    modal.querySelector("#modal-effect-duration").textContent = "";
+    modal.querySelector("#modal-effect-side-effects").textContent = "";
+  }
 
   const favoriteButton = modal.querySelector("#modal-favorite");
   const isFavorite = getFavorites().includes(item.id);

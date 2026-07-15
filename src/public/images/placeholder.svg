@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" role="img" aria-label="Product image placeholder">
-  <rect width="400" height="300" fill="#f3dfd3"/>
-  <rect x="40" y="40" width="320" height="220" fill="#fff1ea" stroke="#7d7481" stroke-width="2" stroke-dasharray="8 4"/>
-  <text x="200" y="155" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" fill="#4c4450">Magical Candy</text>
-</svg>

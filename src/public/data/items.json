@@ -1,12 +1,12 @@
 [
   {
-    "id": "moon-rocks",
+    "id": "moon_rocks",
     "name": "Moon Rocks",
     "category": "Belinda White Candy",
     "shortDescription": "Rock candy that makes the user nearly weightless.",
     "description": "Moon Rocks reduce the pull of gravity on the user, making movement feel similar to being on the moon. When bitten, they can stop the user’s momentum in midair.",
     "price": "One leap of faith",
-    "image": "images/moon-rocks.webp",
+    "image": "images/moon_rocks.png",
     "magicalEffect": {
       "primary": "Near weightlessness",
       "duration": "Temporary",
@@ -14,13 +14,13 @@
     }
   },
   {
-    "id": "melting-pot-mixers",
+    "id": "melting_pot_mixers",
     "name": "Melting Pot Mixers",
     "category": "Belinda White Candy",
     "shortDescription": "Disguises the user as a different race for one hour.",
     "description": "Melting Pot Mixers alter the user’s appearance, including fingerprints, allowing them to pass as someone from a different race for a limited time.",
     "price": "One hour of your true face",
-    "image": "images/melting-pot-mixers.webp",
+    "image": "images/melting_pot_mixers.png",
     "magicalEffect": {
       "primary": "Disguise transformation",
       "duration": "One hour",
@@ -28,13 +28,13 @@
     }
   },
   {
-    "id": "shock-bits",
+    "id": "shock_bits",
     "name": "Shock Bits",
     "category": "Belinda White Candy",
     "shortDescription": "Charges the user with electricity.",
     "description": "Shock Bits make the user electrically charged. Anyone the user touches can receive a strong electric shock.",
     "price": "A spark you cannot take back",
-    "image": "images/shock-bits.webp",
+    "image": "images/shock_bits.png",
     "magicalEffect": {
       "primary": "Electrical charge",
       "duration": "Temporary",
@@ -42,13 +42,13 @@
     }
   },
   {
-    "id": "proxy-dust",
+    "id": "proxy_dust",
     "name": "Proxy Dust",
     "category": "Belinda White Candy",
     "shortDescription": "Allows the user to control a Proxy Doll.",
     "description": "Proxy Dust looks like a Pixie Stick. The user sprinkles some dust over a Proxy Doll and eats the rest, allowing them to control the doll as though they are inside it.",
     "price": "One borrowed body",
-    "image": "images/proxy-dust.webp",
+    "image": "images/proxy_dust.png",
     "magicalEffect": {
       "primary": "Proxy Doll control",
       "duration": "Until the connection is broken",
@@ -56,13 +56,13 @@
     }
   },
   {
-    "id": "flame-outs",
+    "id": "flame_outs",
     "name": "Flame Outs",
     "category": "Belinda White Candy",
     "shortDescription": "Lets the user breathe one fireball.",
     "description": "Flame Outs allow the user to launch a ball of fire from their mouth. Each candy works once and can be extremely dangerous at close range.",
     "price": "One breath of danger",
-    "image": "images/flame-outs.webp",
+    "image": "images/flame_outs.png",
     "magicalEffect": {
       "primary": "Fireball discharge",
       "duration": "One use",
@@ -70,13 +70,13 @@
     }
   },
   {
-    "id": "sweet-teeth",
+    "id": "sweet_teeth",
     "name": "Sweet Teeth",
     "category": "Belinda White Candy",
     "shortDescription": "Makes the user’s words extremely persuasive.",
-    "description": "Sweet Teeth look like candy corn. While someone sucks on one, their words become unusually compelling, though strong-willed or warned listeners can resist the effect.",
+    "description": "Sweet Teeth look like candy corn. While someone sucks on one, their words become unusually compelling, though strong_willed or warned listeners can resist the effect.",
     "price": "One honest answer",
-    "image": "images/sweet-teeth.webp",
+    "image": "images/sweet_teeth.png",
     "magicalEffect": {
       "primary": "Persuasive speech",
       "duration": "While candy is in mouth",
@@ -84,13 +84,13 @@
     }
   },
   {
-    "id": "mirror-mints",
+    "id": "mirror_mints",
     "name": "Mirror Mints",
     "category": "Belinda White Candy",
     "shortDescription": "Allows travel through mirrors.",
     "description": "Mirror Mints allow the user to interact with mirrors like liquid. When bitten, the mint lets the user enter the mirror realm and travel through connected mirrors.",
     "price": "One reflection left behind",
-    "image": "images/mirror-mints.webp",
+    "image": "images/mirror_mints.png",
     "magicalEffect": {
       "primary": "Mirror travel",
       "duration": "Until the user exits with another Mirror Mint",
@@ -98,13 +98,13 @@
     }
   },
   {
-    "id": "frost-bites",
+    "id": "frost_bites",
     "name": "Frost Bites",
     "category": "Belinda White Candy",
     "shortDescription": "Turns the user icy and lowers the temperature nearby.",
-    "description": "Frost Bites make the user cold and icicle-like, allowing them to freeze nearby objects and drop the surrounding temperature.",
+    "description": "Frost Bites make the user cold and icicle_like, allowing them to freeze nearby objects and drop the surrounding temperature.",
     "price": "One warm memory",
-    "image": "images/frost-bites.webp",
+    "image": "images/frost_bites.png",
     "magicalEffect": {
       "primary": "Ice transformation",
       "duration": "Temporary",
@@ -112,13 +112,13 @@
     }
   },
   {
-    "id": "creature-crackers",
+    "id": "creature_crackers",
     "name": "Creature Crackers",
     "category": "Belinda White Candy",
     "shortDescription": "Turns the user into a random animal creature.",
     "description": "Creature Crackers transform the user into a random animal creature, making the result difficult to predict before eating one.",
     "price": "Your human shape, temporarily",
-    "image": "images/creature-crackers.webp",
+    "image": "images/creature_crackers.png",
     "magicalEffect": {
       "primary": "Random animal transformation",
       "duration": "Temporary",
@@ -126,13 +126,13 @@
     }
   },
   {
-    "id": "white-fudge",
+    "id": "white_fudge",
     "name": "White Fudge",
     "category": "Belinda White Candy",
     "shortDescription": "Makes people relaxed and unaware of supernatural candy use.",
     "description": "White Fudge is Mrs. White’s special treat. It creates cravings and causes people to overlook supernatural candy effects happening around them.",
     "price": "Your ability to care",
-    "image": "images/white-fudge.webp",
+    "image": "images/white_fudge.png",
     "magicalEffect": {
       "primary": "Supernatural distraction",
       "duration": "Temporary",
@@ -140,13 +140,13 @@
     }
   },
   {
-    "id": "sun-stones",
+    "id": "sun_stones",
     "name": "Sun Stones",
     "category": "Belinda White Candy",
     "shortDescription": "Makes the eater extremely heavy.",
     "description": "Sun Stones work like the opposite of Moon Rocks. They greatly increase the force of gravity on the eater, making them heavy enough to become pinned down.",
     "price": "One burden made visible",
-    "image": "images/sun-stones.webp",
+    "image": "images/sun_stones.png",
     "magicalEffect": {
       "primary": "Increased gravity",
       "duration": "Temporary",
@@ -154,27 +154,27 @@
     }
   },
   {
-    "id": "whisker-cakes",
+    "id": "whisker_cakes",
     "name": "Whisker Cakes",
     "category": "Belinda White Candy",
     "shortDescription": "Causes hair to grow at an unnaturally fast pace.",
     "description": "Whisker Cakes cause rapid hair growth. The effect can make beards, body hair, and other hair grow far faster than normal.",
     "price": "A little dignity",
-    "image": "images/whisker-cakes.webp",
+    "image": "images/whisker_cakes.png",
     "magicalEffect": {
       "primary": "Rapid hair growth",
       "duration": "Temporary effect with lasting hair growth",
-      "sideEffects": "Embarrassing and difficult-to-hide hair growth."
+      "sideEffects": "Embarrassing and difficult_to_hide hair growth."
     }
   },
   {
-    "id": "dizzy-fizzer",
+    "id": "dizzy_fizzer",
     "name": "Dizzy Fizzer",
     "category": "Belinda White Candy",
     "shortDescription": "Makes the eater vomit an unusually large amount of foam.",
     "description": "Dizzy Fizzers cause the eater to become sick and vomit an excessive amount of foam, making them useful as a disruptive candy.",
     "price": "One settled stomach",
-    "image": "images/dizzy-fizzer.webp",
+    "image": "images/dizzy_fizzer.png",
     "magicalEffect": {
       "primary": "Foam sickness",
       "duration": "Immediate disruptive effect",
@@ -182,13 +182,13 @@
     }
   },
   {
-    "id": "clean-slate",
+    "id": "clean_slate",
     "name": "Clean Slate",
     "category": "Belinda White Candy",
     "shortDescription": "A small gray cube that can erase or reset one's memory.",
     "description": "Clean Slates are small gray cubes that dissolve into liquid. They can cancel or reset one's memory, but forcing one on someone can ruin the magic.",
     "price": "One past mistake",
-    "image": "images/clean-slate.webp",
+    "image": "images/clean_slate.png",
     "magicalEffect": {
       "primary": "Memory reset",
       "duration": "Immediate effect",
@@ -196,13 +196,13 @@
     }
   },
   {
-    "id": "peak-performance",
+    "id": "peak_performance",
     "name": "Peak Performance",
     "category": "Sebastian Stott Candy",
     "shortDescription": "Improves athletic and strategic performance.",
     "description": "Peak Performance gum makes the user excellent at athletic and strategic games. Repeated use weakens the effect of later pieces.",
     "price": "One fair contest",
-    "image": "images/peak-performance.webp",
+    "image": "images/peak_performance.png",
     "magicalEffect": {
       "primary": "Enhanced performance",
       "duration": "Temporary",
@@ -216,7 +216,7 @@
     "shortDescription": "Makes the user nearly impossible to injure.",
     "description": "Ironhide makes the user almost invincible. While the effect lasts, the user cannot easily feel pain or suffer damage.",
     "price": "One bruise you should have felt",
-    "image": "images/ironhide.webp",
+    "image": "images/ironhide.png",
     "magicalEffect": {
       "primary": "Extreme durability",
       "duration": "Temporary",
@@ -224,13 +224,13 @@
     }
   },
   {
-    "id": "bestial-biscuits",
+    "id": "bestial_biscuits",
     "name": "Bestial Biscuits",
     "category": "Sebastian Stott Candy",
     "shortDescription": "Turns the user into a powerful animal.",
     "description": "Bestial Biscuits transform the user into an animal such as a mountain gorilla, golden eagle, great white shark, Siberian tiger, gray wolf, or Kodiak bear.",
     "price": "One tame instinct",
-    "image": "images/bestial-biscuits.webp",
+    "image": "images/bestial_biscuits.png",
     "magicalEffect": {
       "primary": "Animal transformation",
       "duration": "Temporary",
@@ -238,13 +238,13 @@
     }
   },
   {
-    "id": "camouflage-caramels",
+    "id": "camouflage_caramels",
     "name": "Camouflage Caramels",
     "category": "Sebastian Stott Candy",
     "shortDescription": "Lets the user blend into their surroundings.",
-    "description": "Camouflage Caramels give the user chameleon-like camouflage, making it easier to hide by blending into nearby colors and patterns.",
+    "description": "Camouflage Caramels give the user chameleon_like camouflage, making it easier to hide by blending into nearby colors and patterns.",
     "price": "One moment unnoticed",
-    "image": "images/camouflage-caramels.webp",
+    "image": "images/camouflage_caramels.png",
     "magicalEffect": {
       "primary": "Camouflage",
       "duration": "Temporary",
@@ -252,13 +252,13 @@
     }
   },
   {
-    "id": "spider-bites",
+    "id": "spider_bites",
     "name": "Spider Bites",
     "category": "Sebastian Stott Candy",
     "shortDescription": "Allows the user to climb walls and spit webs.",
-    "description": "Spider Bites give the user spider-like abilities, including climbing walls and producing webs from their mouth.",
+    "description": "Spider Bites give the user spider_like abilities, including climbing walls and producing webs from their mouth.",
     "price": "One fear of heights",
-    "image": "images/spider-bites.webp",
+    "image": "images/spider_bites.png",
     "magicalEffect": {
       "primary": "Spider abilities",
       "duration": "Temporary",
@@ -272,7 +272,7 @@
     "shortDescription": "Makes the user’s skin metallic.",
     "description": "Jawbreakers cause the user’s skin to become metallic, offering protection and making the user much harder to injure.",
     "price": "One soft landing",
-    "image": "images/jawbreakers.webp",
+    "image": "images/jawbreakers.png",
     "magicalEffect": {
       "primary": "Metallic skin",
       "duration": "Temporary",
@@ -280,13 +280,13 @@
     }
   },
   {
-    "id": "brain-feed",
+    "id": "brain_feed",
     "name": "Brain Feed",
     "category": "Sebastian Stott Candy",
-    "shortDescription": "Gives animals human-like intelligence and communication.",
-    "description": "Brain Feed is kibble used for animals. It gives animals human-like intelligence and allows them to communicate more clearly. Repeated use can make the effect more permanent.",
+    "shortDescription": "Gives animals human_like intelligence and communication.",
+    "description": "Brain Feed is kibble used for animals. It gives animals human_like intelligence and allows them to communicate more clearly. Repeated use can make the effect more permanent.",
     "price": "One secret told by an animal",
-    "image": "images/brain-feed.webp",
+    "image": "images/brain_feed.png",
     "magicalEffect": {
       "primary": "Animal intelligence",
       "duration": "Temporary, possibly lasting with repeated use",
@@ -294,13 +294,36 @@
     }
   },
   {
-    "id": "cannon-blasts",
+    "id": "grains_of_time",
+    "name": "Grains of Time",
+    "category": "Sebastian Stott Candy",
+    "shortDescription": "Rare grains that alter time or temporarily divide the user.",
+    "description": "Grains of Time are difficult_to_create magical candies whose effects depend on their color.",
+    "price": "One moment you can never reclaim",
+    "image": "images/grains_of_time.png",
+    "variants": [
+      {
+        "name": "Blue",
+        "effect": "Sends the user into the past and into a random person with an unoccupied mind."
+      },
+      {
+        "name": "Red",
+        "effect": "Sends the user into the future and into a random person with an unoccupied mind."
+      },
+      {
+        "name": "Yellow",
+        "effect": "Temporarily creates three equally real versions of the user."
+      }
+    ]
+  },
+  {
+    "id": "cannon_blasts",
     "name": "Cannon Blasts",
     "category": "Carnival Candy",
     "shortDescription": "Turns the user into a human cannonball.",
     "description": "Cannon Blasts make the user vibrate at high speed. When the user bites down and aims, they launch toward their target and become invincible for the landing.",
     "price": "One reckless launch",
-    "image": "images/cannon-blasts.webp",
+    "image": "images/cannon_blasts.png",
     "magicalEffect": {
       "primary": "Human cannonball launch",
       "duration": "One launch",
@@ -308,13 +331,13 @@
     }
   },
   {
-    "id": "clown-lips",
+    "id": "clown_lips",
     "name": "Clown Lips",
     "category": "Carnival Candy",
-    "shortDescription": "Gives the user clown-like appearance and acrobatic power.",
+    "shortDescription": "Gives the user clown_like appearance and acrobatic power.",
     "description": "Clown Lips make the user look like a clown and perform impressive acrobatic feats. The user becomes difficult to harm, and funny actions become more powerful.",
     "price": "One serious reputation",
-    "image": "images/clown-lips.webp",
+    "image": "images/clown_lips.png",
     "magicalEffect": {
       "primary": "Acrobatic clown abilities",
       "duration": "While worn or active",
@@ -322,13 +345,13 @@
     }
   },
   {
-    "id": "drip-drops",
-    "name": "Drip-Drops",
+    "id": "drip_drops",
+    "name": "Drip_Drops",
     "category": "Carnival Candy",
     "shortDescription": "Allows the user to liquify parts of their body at will.",
-    "description": "Drip-Drops let the user liquify different parts of their body at will, making them extremely flexible and difficult to trap.",
+    "description": "Drip_Drops let the user liquify different parts of their body at will, making them extremely flexible and difficult to trap.",
     "price": "One solid plan",
-    "image": "images/drip-drops.webp",
+    "image": "images/drip_drops.png",
     "magicalEffect": {
       "primary": "Body liquification",
       "duration": "One thousand breaths, usually about one hour",
@@ -336,13 +359,13 @@
     }
   },
   {
-    "id": "statue-sticks",
+    "id": "statue_sticks",
     "name": "Statue Sticks",
     "category": "Carnival Candy",
     "shortDescription": "Turns the user into a living statue.",
     "description": "Statue Sticks turn the user into a living statue made of whatever they are holding in their left hand. The user can still move while transformed.",
     "price": "One object held too tightly",
-    "image": "images/statue-sticks.webp",
+    "image": "images/statue_sticks.png",
     "magicalEffect": {
       "primary": "Living statue transformation",
       "duration": "As long as the user holds the object",
@@ -350,101 +373,59 @@
     }
   },
   {
-    "id": "grains-of-time-blue",
-    "name": "Blue Grains of Time",
-    "category": "Carnival Candy",
-    "shortDescription": "Sends the user into the past and into an unoccupied mind.",
-    "description": "Blue Grains of Time are rare magical candies connected to time travel. They send the user into the past for a limited time and place them into a random person with an unoccupied mind.",
-    "price": "One memory not yet made",
-    "image": "images/grains-of-time-blue.webp",
-    "magicalEffect": {
-      "primary": "Past time travel and possession",
-      "duration": "Limited time",
-      "sideEffects": "The user does not choose the destination mind."
-    }
-  },
-  {
-    "id": "grains-of-time-red",
-    "name": "Red Grains of Time",
-    "category": "Carnival Candy",
-    "shortDescription": "Sends the user into the future and into an unoccupied mind.",
-    "description": "Red Grains of Time are rare magical candies connected to time travel. They send the user into the future for a limited time and place them into a random person with an unoccupied mind.",
-    "price": "One future consequence",
-    "image": "images/grains-of-time-red.webp",
-    "magicalEffect": {
-      "primary": "Future time travel and possession",
-      "duration": "Limited time",
-      "sideEffects": "The user does not choose the destination mind."
-    }
-  },
-  {
-    "id": "grains-of-time-yellow",
-    "name": "Yellow Grains of Time",
-    "category": "Carnival Candy",
-    "shortDescription": "Replicates the user into three equal bodies for a time.",
-    "description": "Yellow Grains of Time create three versions of the user for a limited time. Each body is equally real during the effect.",
-    "price": "One divided self",
-    "image": "images/grains-of-time-yellow.webp",
-    "magicalEffect": {
-      "primary": "Temporary replication",
-      "duration": "Limited time",
-      "sideEffects": "The user must manage three bodies at once."
-    }
-  },
-  {
-    "id": "jet-stamp",
+    "id": "jet_stamp",
     "name": "Jet Stamp",
     "category": "Arcade Stamp",
     "shortDescription": "Allows the user to fly at high speeds.",
     "description": "The Jet Stamp gives the user the ability to fly, glide, and levitate. The user can move quickly through the air, but their body is not made stronger by the stamp.",
     "price": "50,000 arcade tickets",
-    "image": "images/jet-stamp.webp",
+    "image": "images/jet_stamp.png",
     "magicalEffect": {
       "primary": "Flight",
-      "duration": "Stamp-based ability",
-      "sideEffects": "High-speed flying can be dangerous because the user is not extra durable."
+      "duration": "Stamp_based ability",
+      "sideEffects": "High_speed flying can be dangerous because the user is not extra durable."
     }
   },
   {
-    "id": "tank-stamp",
+    "id": "tank_stamp",
     "name": "Tank Stamp",
     "category": "Arcade Stamp",
     "shortDescription": "Gives the user strength, stamina, and durability.",
     "description": "The Tank Stamp gives the user enhanced strength, supernatural durability, and increased stamina. It is similar to Ironhide but also makes the user stronger and heavier.",
     "price": "50,000 arcade tickets",
-    "image": "images/tank-stamp.webp",
+    "image": "images/tank_stamp.png",
     "magicalEffect": {
       "primary": "Strength and durability",
-      "duration": "Stamp-based ability",
+      "duration": "Stamp_based ability",
       "sideEffects": "The user still feels reduced pain, unlike a full Ironhide effect."
     }
   },
   {
-    "id": "submarine-stamp",
+    "id": "submarine_stamp",
     "name": "Submarine Stamp",
     "category": "Arcade Stamp",
     "shortDescription": "Allows the user to breathe and move naturally underwater.",
     "description": "The Submarine Stamp gives the user aquatic respiration, water immunity, speed swimming, underwater senses, pressure resistance, and strong maneuverability in water.",
     "price": "40,000 arcade tickets",
-    "image": "images/submarine-stamp.webp",
+    "image": "images/submarine_stamp.png",
     "magicalEffect": {
       "primary": "Underwater adaptation",
-      "duration": "Stamp-based ability",
+      "duration": "Stamp_based ability",
       "sideEffects": "Most useful near water; limited value on dry land."
     }
   },
   {
-    "id": "race-car-stamp",
+    "id": "race_car_stamp",
     "name": "Race Car Stamp",
     "category": "Arcade Stamp",
     "shortDescription": "Lets the user enter race mode and move at extreme speed.",
     "description": "The Race Car Stamp lets the user enter an altered state where the world seems to slow down. This creates the effect of supernatural speed and faster reactions.",
     "price": "40,000 arcade tickets",
-    "image": "images/race-car-stamp.webp",
+    "image": "images/race_car_stamp.png",
     "magicalEffect": {
       "primary": "Race mode speed",
-      "duration": "Stamp-based ability with energy cost",
-      "sideEffects": "Higher-speed modes require more energy."
+      "duration": "Stamp_based ability with energy cost",
+      "sideEffects": "Higher_speed modes require more energy."
     }
   }
 ]
