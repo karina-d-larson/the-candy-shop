@@ -1,5 +1,61 @@
 [
   {
+    "id": "jet_stamp",
+    "name": "Jet Stamp",
+    "category": "Arcade Stamp",
+    "shortDescription": "Allows the user to fly at high speeds.",
+    "description": "The Jet Stamp gives the user the ability to fly, glide, and levitate. The user can move quickly through the air, but their body is not made stronger by the stamp.",
+    "price": "50,000 arcade tickets",
+    "image": "images/jet_stamp.webp",
+    "magicalEffect": {
+      "primary": "Flight",
+      "duration": "Stamp needs renewed every 2 weeks",
+      "sideEffects": "High-speed flying can be dangerous because the user is not extra durable."
+    }
+  },
+  {
+    "id": "tank_stamp",
+    "name": "Tank Stamp",
+    "category": "Arcade Stamp",
+    "shortDescription": "Gives the user strength, stamina, and durability.",
+    "description": "The Tank Stamp gives the user enhanced strength, supernatural durability, and increased stamina. It is similar to Ironhide but also makes the user stronger and heavier.",
+    "price": "50,000 arcade tickets",
+    "image": "images/tank_stamp.webp",
+    "magicalEffect": {
+      "primary": "Strength and durability",
+      "duration": "Stamp needs renewed every 2 weeks",
+      "sideEffects": "The user still feels reduced pain, unlike a full Ironhide effect."
+    }
+  },
+  {
+    "id": "submarine_stamp",
+    "name": "Submarine Stamp",
+    "category": "Arcade Stamp",
+    "shortDescription": "Allows the user to breathe and move naturally underwater.",
+    "description": "The Submarine Stamp gives the user aquatic respiration, water immunity, speed swimming, underwater senses, pressure resistance, and strong maneuverability in water.",
+    "price": "40,000 arcade tickets",
+    "image": "images/submarine_stamp.webp",
+    "magicalEffect": {
+      "primary": "Underwater adaptation",
+      "duration": "Stamp needs renewed every 2 weeks",
+      "sideEffects": "Most useful near water; limited value on dry land."
+    }
+  },
+  {
+    "id": "race_car_stamp",
+    "name": "Race Car Stamp",
+    "category": "Arcade Stamp",
+    "shortDescription": "Lets the user enter race mode and move at extreme speed.",
+    "description": "The Race Car Stamp lets the user enter an altered state where the world seems to slow down. This creates the effect of supernatural speed and faster reactions.",
+    "price": "40,000 arcade tickets",
+    "image": "images/race_car_stamp.webp",
+    "magicalEffect": {
+      "primary": "Race mode speed",
+      "duration": "Stamp needs renewed every 2 weeks and has an energy cost",
+      "sideEffects": "Higher-speed modes require more energy."
+    }
+  },
+  {
     "id": "moon_rocks",
     "name": "Moon Rocks",
     "category": "Belinda White Candy",
@@ -370,62 +426,6 @@
       "primary": "Living statue transformation",
       "duration": "As long as the user holds the object",
       "sideEffects": "The material depends on the object held in the left hand."
-    }
-  },
-  {
-    "id": "jet_stamp",
-    "name": "Jet Stamp",
-    "category": "Arcade Stamp",
-    "shortDescription": "Allows the user to fly at high speeds.",
-    "description": "The Jet Stamp gives the user the ability to fly, glide, and levitate. The user can move quickly through the air, but their body is not made stronger by the stamp.",
-    "price": "50,000 arcade tickets",
-    "image": "images/jet_stamp.webp",
-    "magicalEffect": {
-      "primary": "Flight",
-      "duration": "Stamp needs renewed every 2 weeks",
-      "sideEffects": "High-speed flying can be dangerous because the user is not extra durable."
-    }
-  },
-  {
-    "id": "tank_stamp",
-    "name": "Tank Stamp",
-    "category": "Arcade Stamp",
-    "shortDescription": "Gives the user strength, stamina, and durability.",
-    "description": "The Tank Stamp gives the user enhanced strength, supernatural durability, and increased stamina. It is similar to Ironhide but also makes the user stronger and heavier.",
-    "price": "50,000 arcade tickets",
-    "image": "images/tank_stamp.webp",
-    "magicalEffect": {
-      "primary": "Strength and durability",
-      "duration": "Stamp needs renewed every 2 weeks",
-      "sideEffects": "The user still feels reduced pain, unlike a full Ironhide effect."
-    }
-  },
-  {
-    "id": "submarine_stamp",
-    "name": "Submarine Stamp",
-    "category": "Arcade Stamp",
-    "shortDescription": "Allows the user to breathe and move naturally underwater.",
-    "description": "The Submarine Stamp gives the user aquatic respiration, water immunity, speed swimming, underwater senses, pressure resistance, and strong maneuverability in water.",
-    "price": "40,000 arcade tickets",
-    "image": "images/submarine_stamp.webp",
-    "magicalEffect": {
-      "primary": "Underwater adaptation",
-      "duration": "Stamp needs renewed every 2 weeks",
-      "sideEffects": "Most useful near water; limited value on dry land."
-    }
-  },
-  {
-    "id": "race_car_stamp",
-    "name": "Race Car Stamp",
-    "category": "Arcade Stamp",
-    "shortDescription": "Lets the user enter race mode and move at extreme speed.",
-    "description": "The Race Car Stamp lets the user enter an altered state where the world seems to slow down. This creates the effect of supernatural speed and faster reactions.",
-    "price": "40,000 arcade tickets",
-    "image": "images/race_car_stamp.webp",
-    "magicalEffect": {
-      "primary": "Race mode speed",
-      "duration": "Stamp needs renewed every 2 weeks and has an energy cost",
-      "sideEffects": "Higher-speed modes require more energy."
     }
   }
 ]
