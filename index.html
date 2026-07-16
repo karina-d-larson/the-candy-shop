@@ -29,7 +29,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;600;700&display=optional"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
       rel="stylesheet"
     />
     <title>The Candy Shop Wars Catalog</title>
@@ -104,53 +108,81 @@
 
     <footer class="site-footer">
       <div class="container site-footer__inner">
-        <div class="site-footer__brand">The Candy Shop Wars</div>
-        <div class="site-footer__links">
-          <a class="site-footer__link" href="/pages/design-documents.html">Design Document</a>
+        <div class="site-footer__top">
+          <div class="site-footer__left">
+            <p class="site-footer__brand">The Candy Shop Wars</p>
+            <nav class="site-footer__nav" aria-label="Project links">
+              <a class="site-footer__link" href="/pages/design-documents.html">Design Document</a>
+            </nav>
+          </div>
+          <div class="site-footer__right">
+            <p class="site-footer__disclaimer">
+              Unofficial student fan project. Not affiliated with, endorsed by, or officially supported by Brandon Mull or the series' publishers.
+              <em>The Candy Shop Wars</em> and related names belong to their respective rights holders.
+            </p>
+          </div>
         </div>
-        <p class="text-muted">&copy; 2026 The Candy Shop Wars Catalog. All Rights Reserved.</p>
+        <p class="site-footer__copyright">&copy; 2026 Karina Larson. Original site design and code.</p>
       </div>
     </footer>
 
     <div id="product-modal" class="product-modal" hidden role="dialog" aria-modal="true" aria-labelledby="modal-name">
       <div class="product-modal__backdrop"></div>
       <div class="product-modal__panel">
-        <button type="button" class="product-modal__close" aria-label="Close product details">
-          <span class="material-symbols-outlined" aria-hidden="true">close</span>
-        </button>
-
-        <div class="product-modal__gallery wireframe-crosshatch">
-          <img id="modal-image" src="" alt="" />
+        <div class="product-modal__toolbar">
+          <button type="button" class="product-modal__close" aria-label="Close product details">
+            <span class="material-symbols-outlined" aria-hidden="true">close</span>
+          </button>
         </div>
 
-        <div class="product-modal__content">
-          <span id="modal-category" class="chip"></span>
-          <h2 id="modal-name" class="product-detail__name"></h2>
-          <p id="modal-price" class="product-detail__price"></p>
+        <div class="product-modal__body">
+          <div class="product-modal__top">
+            <div class="product-modal__gallery product-modal__image-wrapper wireframe-crosshatch">
+              <img
+                id="modal-image"
+                class="product-modal__image"
+                src=""
+                alt=""
+                width="512"
+                height="512"
+                decoding="async"
+              />
+            </div>
 
-          <div class="divider"></div>
+            <div class="product-modal__intro">
+              <span id="modal-category" class="chip"></span>
+              <h2 id="modal-name" class="product-detail__name"></h2>
+              <p id="modal-price" class="product-detail__price"></p>
 
-          <h3 class="label-caps text-muted">Description</h3>
-          <p id="modal-description" class="subtitle"></p>
+              <div class="divider"></div>
 
-          <div id="modal-variants" class="variant-list" hidden>
-            <h3 id="modal-variants-title" class="label-caps text-muted">Available Grains</h3>
-            <ul id="modal-variants-list" class="variant-list__items"></ul>
+              <h3 class="label-caps text-muted">Description</h3>
+              <p id="modal-description" class="subtitle"></p>
+            </div>
           </div>
 
-          <div id="modal-effects" class="info-box">
-            <h3 class="info-box__title label-caps">Magical Properties</h3>
-            <div class="info-row">
-              <span class="text-muted">Primary Effect:</span>
-              <span id="modal-effect-primary"></span>
+          <div class="product-modal__details">
+            <div id="modal-variants" class="variant-list" hidden>
+              <h3 id="modal-variants-title" class="label-caps text-muted">Available Grains</h3>
+              <ul id="modal-variants-list" class="variant-list__items"></ul>
             </div>
-            <div class="info-row">
-              <span class="text-muted">Duration:</span>
-              <span id="modal-effect-duration"></span>
-            </div>
-            <div class="info-row">
-              <span class="text-muted">Side Effects:</span>
-              <span id="modal-effect-side-effects"></span>
+
+            <div id="modal-effects" class="info-box">
+              <h3 class="info-box__title label-caps">Magical Properties</h3>
+              <dl class="info-list">
+                <div class="info-row">
+                  <dt class="text-muted">Primary Effect</dt>
+                  <dd id="modal-effect-primary"></dd>
+                </div>
+                <div class="info-row">
+                  <dt class="text-muted">Duration</dt>
+                  <dd id="modal-effect-duration"></dd>
+                </div>
+                <div class="info-row">
+                  <dt class="text-muted">Side Effects</dt>
+                  <dd id="modal-effect-side-effects"></dd>
+                </div>
+              </dl>
             </div>
           </div>
 

@@ -111,7 +111,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
-.product-card:focus-visible {
+.product-card__trigger:focus-visible {
   outline: 3px solid var(--color-primary);
   outline-offset: 2px;
 }

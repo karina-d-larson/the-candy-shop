@@ -31,8 +31,8 @@
   --border-subtle: rgba(36, 25, 19, 0.2);
   --border-faint: rgba(36, 25, 19, 0.1);
 
-  --font-display: "Cinzel", serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: "Cinzel", "Times New Roman", Times, serif;
+  --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
   --space-unit: 8px;
   --space-sm: 12px;

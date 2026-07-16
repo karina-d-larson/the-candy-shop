@@ -61,18 +61,6 @@ function bindGridEvents() {
     const item = allItems.find((entry) => entry.id === itemId);
     if (item) openModal(item, trigger);
   });
-
-  grid?.addEventListener("keydown", (event) => {
-    if (event.key !== "Enter" && event.key !== " ") return;
-
-    const card = event.target.closest(".product-card");
-    if (!card) return;
-
-    event.preventDefault();
-    const itemId = card.dataset.itemId;
-    const item = allItems.find((entry) => entry.id === itemId);
-    if (item) openModal(item, card.querySelector("[data-open-item]") || card);
-  });
 }
 
 function setupFilters() {

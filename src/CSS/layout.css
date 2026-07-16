@@ -174,7 +174,7 @@
 
 /* Footer */
 .site-footer {
-  margin-top: var(--space-lg);
+  margin-top: auto;
   padding: var(--space-md) 0;
   background: var(--color-surface-container-highest);
   border-top: 1px solid var(--border-faint);
@@ -183,25 +183,44 @@
 .site-footer__inner {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: var(--space-md);
-  text-align: center;
+}
+
+.site-footer__top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+  align-items: start;
+}
+
+.site-footer__left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-unit);
 }
 
 .site-footer__brand {
+  margin: 0;
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--color-primary);
 }
 
-.site-footer__links {
+.site-footer__nav {
   display: flex;
-  gap: var(--space-md);
+  flex-wrap: wrap;
 }
 
 .site-footer__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.25rem 0;
+  font-size: 0.9375rem;
   color: var(--color-on-surface-variant);
+  text-decoration: underline;
+  text-underline-offset: 3px;
   transition: color var(--transition);
 }
 
@@ -209,10 +228,43 @@
   color: var(--color-primary);
 }
 
+.site-footer__link:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.site-footer__disclaimer {
+  margin: 0;
+  max-width: 42rem;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-on-surface-variant);
+}
+
+.site-footer__copyright {
+  margin: 0;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-faint);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-on-surface-variant);
+  text-align: center;
+}
+
 @media (min-width: 768px) {
-  .site-footer__inner {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+  .site-footer__top {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+    gap: 2rem;
+  }
+
+  .site-footer__link {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer__link {
+    transition: none !important;
   }
 }

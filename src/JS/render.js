@@ -6,23 +6,32 @@ function imageOnErrorAttr() {
   return `onerror="this.onerror=null;this.src='${PLACEHOLDER}'"`;
 }
 
+function imageAttrs() {
+  return `width="512" height="512" loading="lazy" decoding="async" ${imageOnErrorAttr()}`;
+}
+
 export function renderItemCard(item) {
   return `
-    <article class="product-card" data-item-id="${item.id}" tabindex="0" aria-label="${item.name}, ${formatItemPrice(item.price)}">
-      <div class="product-card__image-wrap wireframe-crosshatch">
-        <img src="${getItemImagePath(item.image)}" alt="${item.name}" ${imageOnErrorAttr()} />
-        <span class="product-card__badge">${item.category}</span>
-      </div>
-      <div class="product-card__body">
-        <div class="product-card__header">
-          <h2 class="product-card__title">${item.name}</h2>
-          <span class="product-card__price">${formatItemPrice(item.price)}</span>
-        </div>
-        <p class="product-card__description">${item.shortDescription}</p>
-        <button type="button" class="btn btn--primary product-card__link" data-open-item="${item.id}">
-          View Details
-        </button>
-      </div>
+    <article class="product-card" data-item-id="${item.id}">
+      <button
+        type="button"
+        class="product-card__trigger"
+        data-open-item="${item.id}"
+        aria-label="View details for ${item.name}"
+      >
+        <span class="product-card__image-wrap wireframe-crosshatch">
+          <img src="${getItemImagePath(item.image)}" alt="" ${imageAttrs()} />
+          <span class="product-card__badge">${item.category}</span>
+        </span>
+        <span class="product-card__body">
+          <span class="product-card__header">
+            <span class="product-card__title">${item.name}</span>
+            <span class="product-card__price">${formatItemPrice(item.price)}</span>
+          </span>
+          <span class="product-card__description">${item.shortDescription}</span>
+          <span class="product-card__cta btn btn--primary product-card__link">View Details</span>
+        </span>
+      </button>
     </article>
   `;
 }
@@ -35,7 +44,7 @@ export function renderFavoriteCard(item) {
   return `
     <article class="favorite-card" data-item-id="${item.id}">
       <div class="favorite-card__image-wrap wireframe-crosshatch">
-        <img src="${getItemImagePath(item.image)}" alt="${item.name}" ${imageOnErrorAttr()} />
+        <img src="${getItemImagePath(item.image)}" alt="${item.name}" ${imageAttrs()} />
         <button
           type="button"
           class="favorite-card__remove"
@@ -65,7 +74,7 @@ export function renderCartItem(item, quantity) {
   return `
     <article class="cart-item" data-item-id="${item.id}">
       <div class="cart-item__image-wrap wireframe-crosshatch">
-        <img src="${getItemImagePath(item.image)}" alt="${item.name}" ${imageOnErrorAttr()} />
+        <img src="${getItemImagePath(item.image)}" alt="${item.name}" ${imageAttrs()} />
       </div>
       <div class="cart-item__body">
         <div class="cart-item__header">
@@ -92,7 +101,7 @@ export function renderOrderSummaryItem(item, quantity = 1) {
   return `
     <div class="summary-item">
       <div class="summary-item__thumb wireframe-crosshatch">
-        <img src="${getItemImagePath(item.image)}" alt="${item.name}" ${imageOnErrorAttr()} />
+        <img src="${getItemImagePath(item.image)}" alt="${item.name}" ${imageAttrs()} />
       </div>
       <div class="summary-item__body">
         <div class="summary-item__header">

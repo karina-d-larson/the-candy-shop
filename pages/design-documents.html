@@ -28,7 +28,12 @@
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600&display=optional"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../src/CSS/variables.css" />
+  <link rel="stylesheet" href="../src/CSS/layout.css" />
   <link rel="stylesheet" href="../src/CSS/design-documents.css" />
   <title>Project Planning | The Candy Shop Wars Catalog</title>
 </head>
@@ -411,8 +416,24 @@ THE-CANDY-SHOP
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 The Candy Shop Wars Catalog Planning Document</p>
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__top">
+        <div class="site-footer__left">
+          <p class="site-footer__brand">The Candy Shop Wars</p>
+          <nav class="site-footer__nav" aria-label="Project links">
+            <a class="site-footer__link" href="/pages/design-documents.html" aria-current="page">Design Document</a>
+          </nav>
+        </div>
+        <div class="site-footer__right">
+          <p class="site-footer__disclaimer">
+            Unofficial student fan project. Not affiliated with, endorsed by, or officially supported by Brandon Mull or the series' publishers.
+            <em>The Candy Shop Wars</em> and related names belong to their respective rights holders.
+          </p>
+        </div>
+      </div>
+      <p class="site-footer__copyright">&copy; 2026 Karina Larson. Original site design and code.</p>
+    </div>
   </footer>
 </body>
 </html>
